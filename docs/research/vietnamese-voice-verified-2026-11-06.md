@@ -77,7 +77,7 @@ rhubarb -r phonetic -f json -o cues.json voice.wav
 
 | Engine | Mốc upstream đã đọc | Pin bắt buộc trong nghiệm thu Gemini |
 |---|---|---|
-| VieNeu | [Model card](https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo) ghi SDK **v3.7.1**, model ID `pnnbao-ump/VieNeu-TTS-v3-Turbo`. README repo và model card hiện lệch số preset (25 so với 23). | Chốt version PyPI/commit SDK, **SHA revision Hugging Face** của weights và codec, backend/precision, roster từ `list_preset_voices()`, SHA của output test. Không coi version trong model card là pin thực tế của repo này khi chưa cài. |
+| VieNeu | Model card hiện vẫn ghi SDK **v3.7.1** và 23 giọng; PyPI đã phát hành **3.8.3** ngày 23/09/2026. Đây là tài liệu đối chiếu ngày 06/11/2026; roster phải lấy từ SDK đã cài. | Chốt version PyPI/commit SDK, **SHA revision Hugging Face** của model và codec, backend/precision, roster từ `list_preset_voices()`, SHA của output smoke test. Không coi version trong model card là pin runtime thực tế. |
 | ZeroTTS | [`pyproject.toml`](https://github.com/zeroweight-ai/ZeroTTS/blob/main/pyproject.toml) ghi **0.1.5**, model ID `zeroweight-ai/ZeroTTS`. | Pin package version và SHA revision weights/voice pack; ghi cache path, voice ID, mode chuẩn hóa, SHA output. Không chọn `voice=None` vì README nêu giọng unconditional không ổn định qua các lần chạy. |
 | KorvaTTS | [`pyproject.toml`](https://github.com/dogenthq/KorvaTTS/blob/main/pyproject.toml) ghi **0.1.3**, model ID `dogenthq/KorvaTTS`. | Pin package version, SHA revision `onnx/` và `voice_styles/`, `seed`, `total_steps`, `speed`, silence giữa chunk, SHA output. |
 | PhoWhisper | Model ID ví dụ `vinai/PhoWhisper-small`. | Pin revision model/processor và bản Transformers/PyTorch nếu đưa vào kiểm transcript. |
@@ -111,3 +111,25 @@ Pipeline: `VoiceLine → normalizer có ghi provenance → TTS ở venv riêng �
 `duration_frames` là slot kịch bản, không chắc bằng thời lượng audio thật. Nếu audio tràn slot, trả cảnh báo/lỗi hoặc xin chính sách fit cụ thể; không cắt hay kéo giãn âm thanh im lặng. `audio_asset_id` chỉ được cập nhật trong ProjectSpec sau khi core đã lưu artifact và kiểm revision project. Mapping mouth chart A–H/X của Rhubarb sang 3D viseme là bước downstream và cần QA hình ảnh, nhất là tiếng Việt.
 
 Gemini sở hữu `adapters/audio/**`, venv/lockfile riêng, smoke test và báo cáo tiếng Việt theo ticket `AF-AUDIO-VI-01`; Codex sở hữu schema, API, persistence và phép quy đổi timeline. Handoff tối thiểu: version/package/model revision đã pin, danh sách file đổi, license code/weights/preset/reference, lệnh chạy Windows CPU, file WAV ngắn kèm sample rate/channels/subtype/hash, transcript nghe kiểm, lỗi/failure mode và đề xuất contract. Chỉ nâng trạng thái adapter lên `supported` sau khi có test thật trên Windows đích và fixture thoại tiếng Việt chạy được.
+
+## Cập nhật xác minh VieNeu SDK 3.8.3 (06/11/2026)
+
+Phần này thay thế mốc phiên bản cũ ở bảng trên. PyPI liệt kê `vieneu==3.8.3`, Python `>=3.10`, giấy phép Apache-2.0; wheel `py3-none-any` có SHA-256 `7388d166e65746f5bb075bf8094d324f8131a82393680b712260d6f2f983ef06`. PyPI ghi release file này **không có provenance attestation**, nên lockfile phải giữ checksum và ghi rõ nguồn lấy package. [PyPI 3.8.3](https://pypi.org/project/vieneu/3.8.3/)
+
+README được đóng gói trên PyPI xác nhận đường CPU tối thiểu là ONNX và API công khai là `infer()` trả waveform, sau đó `save()`. Để adapter của AnimeFlow có hành vi CPU nhất quán, tạo instance tường minh `Vieneu(mode="v3turbo", backend="onnx")`; ghi backend thực tế, precision, sample rate và SHA model assets vào provenance. Đầu ra v3 Turbo là 48 kHz. [VieNeu README trên PyPI](https://github.com/pnnbao97/VieNeu-TTS/blob/main/README_PYPI.md), [factory và backend source](https://github.com/pnnbao97/VieNeu-TTS/blob/main/src/vieneu/factory.py)
+
+```python
+from vieneu import Vieneu
+
+tts = Vieneu(mode="v3turbo", backend="onnx")
+audio = tts.infer("Xin chào, đây là một câu thoại tiếng Việt.", voice="Hải Đăng")
+tts.save(audio, "vieneu-vi.wav")
+```
+
+Có ba lưu ý quan trọng khi Gemini hoàn tất adapter:
+
+1. **Không khai báo generation là seeded/deterministic chỉ vì request có trường `seed`.** API `infer()` trong source đang công bố không có tham số seed tường minh và source không nhắc tới seed; trường metadata không làm cho lượt sinh lặp lại được. Để trạng thái `determinism`, dùng `unknown` trừ khi bản package được pin có seed được áp dụng thật và có bằng chứng lặp lại.
+2. **Không hard-code số hoặc tên preset.** Model card còn ghi 3.7.1 và 23 giọng; roster có thẩm quyền là kết quả `list_preset_voices()` từ đúng package đang chạy. [VieNeu model card](https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo)
+3. **Không tải model khi gọi health/inspect nhẹ.** Khởi tạo SDK sẽ nạp runtime và có thể kéo nhiều artifact; lệnh inspect nên đọc manifest/config mà không khởi tạo engine. Khi chạy thật, lưu revision bất biến của model, codec và dependency phonemizer, không ghi nhãn chung như `v3-turbo` làm model revision.
+
+Adapter chỉ được coi là đã xác minh sau smoke test Windows CPU bằng `vieneu==3.8.3` (hoặc một version được chốt rõ), xác nhận API ngay trong venv đó, tạo WAV và đọc lại metadata từ file. Đồng thời phải kiểm tra consent trước khi dùng `ref_audio` clone giọng; preset kèm model có license riêng đã công bố nhưng không cấp quyền clone người khác. Thông tin trên là đối chiếu mã/tài liệu upstream, **chưa phải kết quả chạy model trong môi trường AnimeFlow**.
