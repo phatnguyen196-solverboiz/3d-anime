@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "ecb857be-8a30-4dba-9d5e-e2dc3bff7913",
+  "title": "Chiếc vé bị đánh rơi",
+  "locale": "vi-VN",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "fps": {
+      "numerator": 24000,
+      "denominator": 1001
+    },
+    "audio_sample_rate": 48000
+  },
+  "assets": [],
+  "characters": [
+    {
+      "character_id": "525f2ac6-5a4a-4ede-818b-28ac777ac8e7",
+      "name": "Linh",
+      "asset_ids": []
+    },
+    {
+      "character_id": "537bc7fe-5713-407b-8ab1-f857663265ea",
+      "name": "Minh",
+      "asset_ids": []
+    }
+  ],
+  "sequences": [
+    {
+      "sequence_id": "09a4677d-1ee8-4c80-b77d-16639fbb80db",
+      "title": "Trước giờ tàu chạy",
+      "scenes": [
+        {
+          "scene_id": "e162ea91-bca1-4f47-9274-6791d04a596d",
+          "title": "Sân ga",
+          "shots": [
+            {
+              "shot_id": "28732ecf-985b-49a8-967f-44504ce852a7",
+              "title": "Tấm vé dưới chân",
+              "duration_frames": 72,
+              "description": "Toàn cảnh sân ga. Một tấm vé nằm bên chiếc ghế, Linh bước vào khung.",
+              "events": []
+            },
+            {
+              "shot_id": "b32879d2-706a-48c8-8fc9-73c9721533f5",
+              "title": "Linh nhặt vé",
+              "duration_frames": 96,
+              "description": "Cận tay nhặt vé, chuyển sự chú ý sang người đang tìm đồ phía xa.",
+              "events": [
+                {
+                  "event_id": "fd19dfbd-9d0f-4e45-bdf1-e529449c3574",
+                  "type": "prop.pickup",
+                  "frame": 36,
+                  "intensity": 0.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scene_id": "648579b9-4ef0-4fcb-9ba7-263491a31441",
+          "title": "Gặp chủ vé",
+          "shots": [
+            {
+              "shot_id": "e42e0731-4996-4668-a220-e76a8316ff66",
+              "title": "Trả lại tấm vé",
+              "duration_frames": 96,
+              "description": "Linh trả vé cho Minh. Minh thở phào, cả hai nhìn về phía tàu.",
+              "events": [
+                {
+                  "event_id": "9afc7de9-ea3b-473c-a422-484d28dd6df1",
+                  "type": "gesture.wave",
+                  "frame": 72,
+                  "intensity": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "voice_lines": [
+    {
+      "voice_line_id": "e0ac8216-25c1-4e60-93e9-40d853be54d4",
+      "shot_id": "b32879d2-706a-48c8-8fc9-73c9721533f5",
+      "character_id": "525f2ac6-5a4a-4ede-818b-28ac777ac8e7",
+      "text": "Vé của bạn phải không?",
+      "language": "vi-VN",
+      "start_frame": 24,
+      "duration_frames": 48
+    },
+    {
+      "voice_line_id": "e58e1f25-a149-4f4f-a079-d6b41cf68e02",
+      "shot_id": "e42e0731-4996-4668-a220-e76a8316ff66",
+      "character_id": "537bc7fe-5713-407b-8ab1-f857663265ea",
+      "text": "Cảm ơn bạn! Mình suýt trễ tàu.",
+      "language": "vi-VN",
+      "start_frame": 12,
+      "duration_frames": 72
+    }
+  ]
+}

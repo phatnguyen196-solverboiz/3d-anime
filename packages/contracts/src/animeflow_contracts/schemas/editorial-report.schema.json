@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animeflow.local/schemas/editorial-report.schema.json",
+  "title": "EditorialReport",
+  "description": "Intended sequential cut timing, not measured media or rendered output.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "project_revision",
+    "assembly",
+    "fps",
+    "audio_sample_rate",
+    "duration_frames",
+    "duration_samples",
+    "shots",
+    "voice_lines",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "project_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "project_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "assembly": {
+      "const": "sequential_cuts"
+    },
+    "fps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "audio_sample_rate": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "duration_frames": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "duration_samples": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "shot_id",
+          "scene_id",
+          "sequence_id",
+          "title",
+          "description",
+          "start_frame",
+          "end_frame_exclusive",
+          "duration_frames",
+          "start_sample",
+          "end_sample_exclusive",
+          "duration_samples",
+          "voice_line_ids",
+          "events"
+        ],
+        "properties": {
+          "shot_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "scene_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sequence_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "start_frame": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_frame_exclusive": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_frames": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_sample": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_sample_exclusive": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_samples": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "voice_line_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "event_id",
+                "type",
+                "local_frame",
+                "frame"
+              ],
+              "properties": {
+                "event_id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "local_frame": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "frame": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "voice_lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "voice_line_id",
+          "shot_id",
+          "character_id",
+          "text",
+          "language",
+          "local_start_frame",
+          "audio_linked",
+          "start_frame",
+          "end_frame_exclusive",
+          "duration_frames",
+          "start_sample",
+          "end_sample_exclusive",
+          "duration_samples"
+        ],
+        "properties": {
+          "voice_line_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "shot_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "character_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "text": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "local_start_frame": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "audio_linked": {
+            "type": "boolean"
+          },
+          "start_frame": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_frame_exclusive": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_frames": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_sample": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_sample_exclusive": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_samples": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "entity_id"
+        ],
+        "properties": {
+          "code": {
+            "enum": [
+              "empty_scene",
+              "voice_audio_unlinked",
+              "same_speaker_overlap"
+            ]
+          },
+          "entity_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "related_entity_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      }
+    }
+  }
+}

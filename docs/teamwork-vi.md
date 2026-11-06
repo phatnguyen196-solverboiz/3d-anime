@@ -20,6 +20,8 @@ Tách branch/worktree; không sửa file người khác đang làm. Root `packag
 - Sequences/scenes/shots hiện được nối tuần tự; chưa có transition/overlap hoặc media playback.
 - `POST /api/v1/projects` nhận `{ "project": ProjectSpec }`; `GET` trả project kèm `revision`.
 - `PUT /api/v1/projects/{id}` nhận `{ "project": ProjectSpec, "expected_revision": number }`; revision cũ trả 409.
+- `GET /api/v1/projects/{id}/editorial` trả report timing dự định của assembly cut nối tiếp, kèm revision; không phải kết quả đo media.
+- `POST /api/v1/projects/{id}/story-edits/preview` và `/story-edits` dùng `StoryEditRequest`: `{ expected_revision, operations }`. Preview không ghi; apply kiểm revision và lưu cả batch, no-op không tăng revision. Ba op: `reorder_shots` trong scene, `set_shot_duration`, `set_voice_text`. Contract/schema và phạm vi ở [nghiên cứu story edit](research/story-edit-video-verified-2026-11-06.md).
 - `POST /api/v1/projects/{id}/jobs` nhận `{ "operation": "project.validate", "expected_revision": number }` hoặc job Blender `{ "operation": "render.shot.blender", "expected_revision": number, "shot_id": UUID, "frame_start": number, "frame_end_exclusive": number }`; nhận job ID để theo dõi.
 - `POST /api/v1/projects/{id}/assets` nhận multipart `file`, `kind` và `expected_revision`; mặc định tối đa 100 MiB/file. `GET /api/v1/projects/{id}/assets/{asset_id}` trả file với bearer header.
 - `GET /api/v1/projects/{id}/events` là SSE, hỗ trợ `Last-Event-ID` hoặc `after_id`; dùng streaming `fetch` gửi bearer header vì `EventSource` của browser không cho set header tùy ý.
@@ -65,5 +67,9 @@ Không commit model weights hoặc voice/reference media chưa được phép.
 ~~~
 
 ## Handoff mỗi ticket
+
+### Ticket cho Gemini: AF-STORY-UI-01
+
+Đầu vào: `StoryEditRequest`, `StoryEditResult`, `EditorialReport` trong contracts/generated; fixture `fixtures/story-edit-project/`. Làm script/shot editor trên ID canonical, draft → preview → apply, hiển thị impact và lỗi/409, giữ draft khi conflict. Text có audio cũ phải hiện lựa chọn detach rõ ràng; không tự cắt/stretch audio hay đánh dấu render đã xong. Cần keyboard reorder và focus/selection theo ID. Chỉ dùng global timing từ report; không tạo một `ProjectSpec.timeline` song song. Owner Gemini giữ `apps/studio-web/**` và UI packages; Codex giữ core/schema. Chưa có persistent undo/player/multi-track trong API này.
 
 Ghi branch, file đã đổi, contract sử dụng, cách chạy, bằng chứng kiểm tra, giới hạn và câu hỏi cần phối hợp. Không đánh dấu một capability đã xong nếu mới chỉ có manifest, fixture hoặc mock.

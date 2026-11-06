@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animeflow.local/schemas/story-edit-result.schema.json",
+  "title": "StoryEditResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mode",
+    "base_revision",
+    "revision",
+    "changed",
+    "project",
+    "report",
+    "impact"
+  ],
+  "properties": {
+    "mode": {
+      "enum": [
+        "preview",
+        "apply"
+      ]
+    },
+    "base_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "changed": {
+      "type": "boolean"
+    },
+    "project": {
+      "$ref": "project.schema.json"
+    },
+    "report": {
+      "$ref": "editorial-report.schema.json"
+    },
+    "impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dependency_tracking",
+        "repositioned_shot_ids",
+        "resized_shot_ids",
+        "edited_voice_line_ids",
+        "detached_audio_line_ids",
+        "render_review_shot_ids",
+        "rebuild_candidates",
+        "extensions_require_review"
+      ],
+      "properties": {
+        "dependency_tracking": {
+          "const": "advisory"
+        },
+        "repositioned_shot_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "resized_shot_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "edited_voice_line_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "detached_audio_line_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "render_review_shot_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "rebuild_candidates": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "animatic",
+              "subtitles",
+              "audio_mix",
+              "video_mux",
+              "voice",
+              "alignment",
+              "lip_sync",
+              "shot_render"
+            ]
+          }
+        },
+        "extensions_require_review": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

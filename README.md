@@ -6,6 +6,7 @@ Nền tảng local-first cho quy trình sản xuất video 2D/3D, hoạt hình b
 
 - JSON Schema cho project, artifact, job và adapter; TypeScript declarations được sinh từ schema.
 - Project mẫu với shot, sự kiện và thoại tiếng Việt; phép quy đổi frame/sample dùng số nguyên.
+- Story edit core: báo cáo timeline cut, preview/apply đảo shot, sửa thời lượng/thoại theo revision; chặn cue tràn shot và giữ rõ tác động của audio cũ.
 - API local có bearer token, project lưu trong SQLite, revision chống ghi đè và validation các liên kết.
 - Import/download asset theo project, băm SHA-256, giới hạn kích thước và kiểm tra file thiếu.
 - Worker một tiến trình, job validation chạy nền với snapshot, hủy job, phục hồi sau khi dừng và event stream.
@@ -83,6 +84,7 @@ Thư mục `docs/research/sources/` chứa các báo cáo làm nguồn; `package
 - [Teamwork, API contract và ticket giao Gemini](docs/teamwork-vi.md)
 - [Các nguồn giọng tiếng Việt](docs/research/sources/vietnamese-voice-research-2026-11-06.md)
 - [Đối chiếu kỹ thuật giọng Việt và handoff Gemini](docs/research/vietnamese-voice-verified-2026-11-06.md)
+- [Nghiên cứu story editor, vấn đề video và API mới](docs/research/story-edit-video-verified-2026-11-06.md)
 - [Project fixture](fixtures/tiny-project/project.json)
 
 Giấy phép của repo này chưa được chọn. Mỗi repo, model weights, giọng và asset bên ngoài cần kiểm tra điều kiện riêng trước khi tích hợp hoặc phân phối.

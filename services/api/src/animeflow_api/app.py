@@ -12,10 +12,17 @@ from typing import Annotated, Any, Literal
 from uuid import UUID, uuid4
 
 from animeflow_blender import RenderError
-from animeflow_blender.runner import blender_executable, validate_render_request
+from animeflow_blender.runner import (
+    EXTENSION_KEY,
+    blender_executable,
+    validate_render_request,
+    validate_scene,
+)
 from animeflow_catalog import load_catalog
+from animeflow_contracts.validation import schema_issues
 from animeflow_orchestrator.storage import Conflict, NotFound, Storage
 from animeflow_orchestrator.worker import Worker
+from animeflow_project.editorial import StoryEditError, editorial_report, plan_story_edit
 from animeflow_project.summary import summarize_project
 from animeflow_project.validation import validate_project
 from fastapi import (
@@ -112,6 +119,13 @@ def create_app(
             status_code=409, content={"detail": {"code": "conflict", "message": str(exc)}}
         )
 
+    @app.exception_handler(StoryEditError)
+    async def story_edit_error_handler(request: Request, exc: StoryEditError) -> JSONResponse:
+        return JSONResponse(
+            status_code=422,
+            content={"detail": {"code": "invalid_story_edit", "issues": exc.issues}},
+        )
+
     def assert_valid(project: dict[str, Any]) -> None:
         try:
             json.dumps(project, allow_nan=False)
@@ -178,6 +192,73 @@ def create_app(
         if body.project["project_id"] != str(project_id):
             raise HTTPException(status_code=422, detail={"code": "project_id_mismatch"})
         return storage.update_project(str(project_id), body.expected_revision, body.project)
+
+    @app.get(
+        "/api/v1/projects/{project_id}/editorial",
+        dependencies=[Depends(require_auth)],
+        tags=["editorial"],
+    )
+    def get_editorial(project_id: UUID) -> dict[str, Any]:
+        current = storage.get_project(str(project_id))
+        return editorial_report(current["project"], current["revision"])
+
+    def edit_story(project_id: UUID, body: dict[str, Any], mode: str) -> dict[str, Any]:
+        issues = schema_issues("story-edit", body)
+        if issues:
+            raise StoryEditError(issues)
+        current = storage.get_project(str(project_id))
+        base_revision = body["expected_revision"]
+        if current["revision"] != base_revision:
+            raise Conflict(
+                f"Expected revision {base_revision}; current revision is {current['revision']}."
+            )
+        plan = plan_story_edit(current["project"], body)
+        # Adapter-specific timing also needs review when the shot's length changes.
+        resized = set(plan["impact"]["resized_shot_ids"])
+        for seq_index, sequence in enumerate(plan["project"]["sequences"]):
+            for scene_index, scene in enumerate(sequence["scenes"]):
+                for shot_index, shot in enumerate(scene["shots"]):
+                    extension = shot.get("extensions", {}).get(EXTENSION_KEY)
+                    if shot["shot_id"] in resized and extension is not None:
+                        issues = validate_scene(extension, shot["duration_frames"])
+                        if issues:
+                            prefix = (
+                                f"/sequences/{seq_index}/scenes/{scene_index}/shots/{shot_index}"
+                                f"/extensions/{EXTENSION_KEY}"
+                            )
+                            raise StoryEditError(
+                                [
+                                    {
+                                        "path": prefix + issue["path"],
+                                        "code": "invalid_blender_scene",
+                                        "message": issue["message"],
+                                    }
+                                    for issue in issues
+                                ]
+                            )
+        revision = base_revision
+        if mode == "apply" and plan["changed"]:
+            # Storage performs the compare-and-swap inside a write transaction.
+            storage.update_project(str(project_id), base_revision, plan["project"])
+            revision += 1
+        plan["report"]["project_revision"] = revision
+        return {"mode": mode, "base_revision": base_revision, "revision": revision, **plan}
+
+    @app.post(
+        "/api/v1/projects/{project_id}/story-edits/preview",
+        dependencies=[Depends(require_auth)],
+        tags=["editorial"],
+    )
+    def preview_story_edit(project_id: UUID, body: dict[str, Any]) -> dict[str, Any]:
+        return edit_story(project_id, body, "preview")
+
+    @app.post(
+        "/api/v1/projects/{project_id}/story-edits",
+        dependencies=[Depends(require_auth)],
+        tags=["editorial"],
+    )
+    def apply_story_edit(project_id: UUID, body: dict[str, Any]) -> dict[str, Any]:
+        return edit_story(project_id, body, "apply")
 
     @app.post(
         "/api/v1/projects/{project_id}/assets",
