@@ -1,0 +1,190 @@
+/**
+ * AnimeFlow Studio Design Tokens
+ * Authoritative Studio Dark Theme CSS Variables & Typography Rules
+ * Conforms to Blueprint §9 and Studio UI specifications.
+ */
+
+:root {
+  /* ==========================================================================
+     Color Tokens — Studio Dark Theme (Blueprint §9)
+     ========================================================================== */
+  --color-bg: #101218;
+  --color-surface: #191d27;
+  --color-panel: #202633;
+  --color-border: #343c4c;
+  --color-text: #f3f5fa;
+  --color-muted: #a8b0c0;
+  --color-accent: #8b7cff;
+  --color-accent-2: #45c6b0;
+  --color-warning: #ffc36b;
+  --color-danger: #ff6d7a;
+  --color-success: #59d39a;
+
+  /* Extended Surface & Interactive Palette */
+  --color-bg-subtle: #141720;
+  --color-bg-hover: #1e2433;
+  --color-surface-subtle: #161a24;
+  --color-surface-card: #202633;
+  --color-surface-card-hover: #283042;
+  --color-surface-active: #323b52;
+  --color-surface-overlay: rgba(16, 18, 24, 0.85);
+
+  --color-border-subtle: #262c3a;
+  --color-border-strong: #48546b;
+  --color-border-focus: #8b7cff;
+
+  --color-text-tertiary: #677389;
+  --color-text-inverse: #101218;
+  --color-text-accent: #8b7cff;
+
+  --color-accent-hover: #9f92ff;
+  --color-accent-active: #7765ff;
+  --color-accent-subtle: rgba(139, 124, 255, 0.15);
+  --color-accent-2-subtle: rgba(69, 198, 176, 0.15);
+  --color-warning-subtle: rgba(255, 195, 107, 0.15);
+  --color-danger-subtle: rgba(255, 109, 122, 0.15);
+  --color-success-subtle: rgba(89, 211, 154, 0.15);
+  --color-info: #4ea8de;
+  --color-info-subtle: rgba(78, 168, 222, 0.15);
+
+  /* Timeline & Playhead Tracks */
+  --color-timeline-video: #8b7cff;
+  --color-timeline-audio: #45c6b0;
+  --color-timeline-event: #ffc36b;
+  --color-timeline-subtitle: #e056fd;
+  --color-timeline-playhead: #ff5252;
+  --color-timeline-playhead-line: rgba(255, 82, 82, 0.8);
+
+  /* ==========================================================================
+     4px Baseline Spacing Scale
+     ========================================================================== */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ==========================================================================
+     Border Radii Scale
+     ========================================================================== */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Elevation & Shadows
+     ========================================================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.6);
+  --shadow-panel: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
+  --shadow-glow-accent: 0 0 12px rgba(139, 124, 255, 0.35);
+  --shadow-glow-danger: 0 0 12px rgba(255, 109, 122, 0.35);
+
+  /* ==========================================================================
+     Typography Scale
+     ========================================================================== */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, Monaco, monospace;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 28px;
+
+  --line-height-xs: 16px;
+  --line-height-sm: 18px;
+  --line-height-base: 20px;
+  --line-height-md: 24px;
+  --line-height-lg: 26px;
+  --line-height-xl: 28px;
+  --line-height-2xl: 36px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ==========================================================================
+     AnimeFlow Namespaced Aliases (--af-*) for component interoperability
+     ========================================================================== */
+  --af-color-bg: var(--color-bg);
+  --af-color-surface: var(--color-surface);
+  --af-color-panel: var(--color-panel);
+  --af-color-border: var(--color-border);
+  --af-color-text: var(--color-text);
+  --af-color-muted: var(--color-muted);
+  --af-color-accent: var(--color-accent);
+  --af-color-accent-2: var(--color-accent-2);
+  --af-color-warning: var(--color-warning);
+  --af-color-danger: var(--color-danger);
+  --af-color-success: var(--color-success);
+
+  --af-space-0: var(--space-0);
+  --af-space-1: var(--space-1);
+  --af-space-2: var(--space-2);
+  --af-space-3: var(--space-3);
+  --af-space-4: var(--space-4);
+  --af-space-5: var(--space-5);
+  --af-space-6: var(--space-6);
+  --af-space-8: var(--space-8);
+  --af-space-10: var(--space-10);
+  --af-space-12: var(--space-12);
+  --af-space-16: var(--space-16);
+
+  --af-radius-none: var(--radius-none);
+  --af-radius-xs: var(--radius-xs);
+  --af-radius-sm: var(--radius-sm);
+  --af-radius-md: var(--radius-md);
+  --af-radius-lg: var(--radius-lg);
+  --af-radius-xl: var(--radius-xl);
+  --af-radius-full: var(--radius-full);
+
+  --af-shadow-sm: var(--shadow-sm);
+  --af-shadow-md: var(--shadow-md);
+  --af-shadow-lg: var(--shadow-lg);
+  --af-shadow-panel: var(--shadow-panel);
+
+  --af-font-sans: var(--font-sans);
+  --af-font-mono: var(--font-mono);
+  --af-text-xs: var(--font-size-xs);
+  --af-text-sm: var(--font-size-sm);
+  --af-text-base: var(--font-size-base);
+  --af-text-md: var(--font-size-md);
+  --af-text-lg: var(--font-size-lg);
+  --af-text-xl: var(--font-size-xl);
+  --af-text-2xl: var(--font-size-2xl);
+}
+
+/* ==========================================================================
+   Tabular Numerals Utility Rules
+   Essential for jitter-free scrubbing, timecode readouts, and frame counters.
+   ========================================================================== */
+.tabular-nums,
+.af-tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+  -webkit-font-feature-settings: "tnum" 1, "lnum" 1;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+.timecode,
+.af-timecode {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums lining-nums;
+  -webkit-font-feature-settings: "tnum" 1, "lnum" 1;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: 0.05em;
+}

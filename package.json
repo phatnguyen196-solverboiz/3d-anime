@@ -1,10 +1,16 @@
 {
-  "name": "animeflow-contract-tooling",
+  "name": "animeflow-studio",
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "workspaces": ["apps/studio-web"],
+  "engines": {"node": "^22.12.0 || ^24.0.0 || >=26.0.0"},
   "scripts": {
-    "contracts:generate": "node scripts/generate-contract-types.mjs"
+    "contracts:generate": "node scripts/generate-contract-types.mjs",
+    "dev": "npm run dev --workspace @animeflow/studio-web",
+    "build": "npm run build --workspace @animeflow/studio-web",
+    "typecheck": "npm run typecheck --workspace @animeflow/studio-web",
+    "test:ui": "npm run test --workspace @animeflow/studio-web"
   },
   "devDependencies": {
     "json-schema-to-typescript": "16.0.0"

@@ -1,0 +1,23 @@
+{
+  "expected_revision": 1,
+  "operations": [
+    {
+      "op": "reorder_shots",
+      "scene_id": "e162ea91-bca1-4f47-9274-6791d04a596d",
+      "shot_ids": [
+        "b32879d2-706a-48c8-8fc9-73c9721533f5",
+        "28732ecf-985b-49a8-967f-44504ce852a7"
+      ]
+    },
+    {
+      "op": "set_shot_duration",
+      "shot_id": "28732ecf-985b-49a8-967f-44504ce852a7",
+      "duration_frames": 48
+    },
+    {
+      "op": "set_voice_text",
+      "voice_line_id": "e0ac8216-25c1-4e60-93e9-40d853be54d4",
+      "text": "Bạn đang tìm tấm vé này à?"
+    }
+  ]
+}
