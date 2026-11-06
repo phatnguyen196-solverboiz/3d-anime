@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animeflow.local/schemas/project.schema.json",
+  "title": "ProjectSpec",
+  "description": "Renderer-independent source project. All video positions are whole frames.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "title", "locale", "canvas", "assets", "characters", "sequences", "voice_lines"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "project_id": {"$ref": "#/$defs/id"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "locale": {"type": "string", "minLength": 2, "maxLength": 35},
+    "canvas": {"$ref": "#/$defs/canvas"},
+    "assets": {"type": "array", "items": {"$ref": "#/$defs/asset"}},
+    "characters": {"type": "array", "items": {"$ref": "#/$defs/character"}},
+    "sequences": {"type": "array", "items": {"$ref": "#/$defs/sequence"}},
+    "voice_lines": {"type": "array", "items": {"$ref": "#/$defs/voiceLine"}},
+    "extensions": {"$ref": "#/$defs/extensions"}
+  },
+  "$defs": {
+    "id": {"type": "string", "format": "uuid"},
+    "extensions": {"type": "object", "description": "Namespaced, optional application extensions."},
+    "canvas": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "height", "fps", "audio_sample_rate"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1, "maximum": 8192},
+        "height": {"type": "integer", "minimum": 1, "maximum": 8192},
+        "fps": {
+          "type": "object", "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer", "minimum": 1, "maximum": 240000},
+            "denominator": {"type": "integer", "minimum": 1, "maximum": 10000}
+          }
+        },
+        "audio_sample_rate": {"type": "integer", "minimum": 8000, "maximum": 192000}
+      }
+    },
+    "asset": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "kind", "uri", "path", "sha256"],
+      "properties": {
+        "asset_id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["image", "video", "audio", "model", "other"]},
+        "uri": {"type": "string", "pattern": "^asset://[0-9a-fA-F-]{36}$"},
+        "path": {"type": "string", "minLength": 1, "maxLength": 1024},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_name": {"type": "string", "maxLength": 255},
+        "media_type": {"type": "string", "maxLength": 128},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "character": {
+      "type": "object", "additionalProperties": false,
+      "required": ["character_id", "name", "asset_ids"],
+      "properties": {
+        "character_id": {"$ref": "#/$defs/id"},
+        "name": {"type": "string", "minLength": 1, "maxLength": 200},
+        "asset_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "sequence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sequence_id", "title", "scenes"],
+      "properties": {
+        "sequence_id": {"$ref": "#/$defs/id"},
+        "title": {"type": "string", "minLength": 1, "maxLength": 200},
+        "scenes": {"type": "array", "items": {"$ref": "#/$defs/scene"}},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "scene": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scene_id", "title", "shots"],
+      "properties": {
+        "scene_id": {"$ref": "#/$defs/id"},
+        "title": {"type": "string", "minLength": 1, "maxLength": 200},
+        "shots": {"type": "array", "items": {"$ref": "#/$defs/shot"}},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "shot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shot_id", "title", "duration_frames", "events"],
+      "properties": {
+        "shot_id": {"$ref": "#/$defs/id"},
+        "title": {"type": "string", "minLength": 1, "maxLength": 200},
+        "duration_frames": {"type": "integer", "minimum": 1, "maximum": 100000000},
+        "description": {"type": "string", "maxLength": 10000},
+        "events": {"type": "array", "items": {"$ref": "#/$defs/shotEvent"}},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "shotEvent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["event_id", "type", "frame"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/id"},
+        "type": {"type": "string", "minLength": 1, "maxLength": 100, "pattern": "^[a-z][a-z0-9_.-]*$"},
+        "frame": {"type": "integer", "minimum": 0},
+        "intensity": {"type": "number", "minimum": 0, "maximum": 1},
+        "payload": {"type": "object"}
+      }
+    },
+    "voiceLine": {
+      "type": "object", "additionalProperties": false,
+      "required": ["voice_line_id", "shot_id", "character_id", "text", "language", "start_frame", "duration_frames"],
+      "properties": {
+        "voice_line_id": {"$ref": "#/$defs/id"},
+        "shot_id": {"$ref": "#/$defs/id"},
+        "character_id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 10000},
+        "language": {"type": "string", "minLength": 2, "maxLength": 35},
+        "start_frame": {"type": "integer", "minimum": 0},
+        "duration_frames": {"type": "integer", "minimum": 1},
+        "audio_asset_id": {"$ref": "#/$defs/id"},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    }
+  }
+}

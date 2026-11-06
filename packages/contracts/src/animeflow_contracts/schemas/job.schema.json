@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animeflow.local/schemas/job.schema.json",
+  "title": "Job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["job_id", "project_id", "project_revision", "operation", "state", "created_at", "started_at", "finished_at", "result", "error"],
+  "properties": {
+    "job_id": {"type": "string", "format": "uuid"},
+    "project_id": {"type": "string", "format": "uuid"},
+    "project_revision": {"type": "integer", "minimum": 1},
+    "operation": {"const": "project.validate"},
+    "state": {"enum": ["queued", "running", "cancel_requested", "cancelled", "succeeded", "failed"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "started_at": {"type": ["string", "null"], "format": "date-time"},
+    "finished_at": {"type": ["string", "null"], "format": "date-time"},
+    "result": {"type": ["object", "null"]},
+    "error": {"type": ["object", "null"]}
+  }
+}

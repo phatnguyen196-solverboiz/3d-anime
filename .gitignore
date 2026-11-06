@@ -1,0 +1,15 @@
+.venv*/
+.agents/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+.animeflow-data/
+dist/
+build/
+.env
+.env.*
+!.env.example
+.npm-cache/

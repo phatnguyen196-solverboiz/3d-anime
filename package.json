@@ -1,0 +1,12 @@
+{
+  "name": "animeflow-contract-tooling",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "contracts:generate": "node scripts/generate-contract-types.mjs"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "16.0.0"
+  }
+}

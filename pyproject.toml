@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75,<82"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "animeflow-core"
+version = "0.1.0"
+description = "Local-first project contracts, API, and worker for AnimeFlow Studio"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.162,<0.163",
+  "uvicorn>=0.54,<0.55",
+  "jsonschema[format]>=4.26,<4.27",
+  "python-multipart>=0.0.20,<0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx2>=2,<3", "ruff>=0.8,<1"]
+
+[tool.setuptools]
+packages = ["animeflow_contracts", "animeflow_catalog", "animeflow_project", "animeflow_api", "animeflow_orchestrator"]
+package-dir = {animeflow_contracts = "packages/contracts/src/animeflow_contracts", animeflow_catalog = "packages/catalog/src/animeflow_catalog", animeflow_project = "packages/project-spec/src/animeflow_project", animeflow_api = "services/api/src/animeflow_api", animeflow_orchestrator = "services/orchestrator/src/animeflow_orchestrator"}
+
+[tool.setuptools.package-data]
+animeflow_contracts = ["schemas/*.json"]
+animeflow_catalog = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["packages", "services", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

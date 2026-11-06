@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animeflow.local/schemas/adapter-manifest.schema.json",
+  "title": "AdapterManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "version", "contract_version", "status", "capabilities", "supported_os", "runtime", "network", "determinism", "license"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9.-]*$", "maxLength": 100},
+    "version": {"type": "string", "minLength": 1, "maxLength": 64},
+    "contract_version": {"const": "1.0.0"},
+    "status": {"enum": ["planned", "experimental", "supported", "disabled"]},
+    "capabilities": {"type": "array", "items": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"}, "uniqueItems": true},
+    "supported_os": {"type": "array", "items": {"enum": ["windows", "macos", "linux"]}, "uniqueItems": true},
+    "runtime": {"type": "string", "minLength": 1},
+    "network": {"enum": ["none", "optional", "required"]},
+    "determinism": {"enum": ["deterministic", "seeded", "nondeterministic", "unknown"]},
+    "license": {
+      "type": "object", "additionalProperties": false,
+      "required": ["code", "models", "review_status"],
+      "properties": {
+        "code": {"type": "string", "minLength": 1},
+        "models": {"type": "string", "minLength": 1},
+        "review_status": {"enum": ["not_reviewed", "reviewed", "restricted"]}
+      }
+    },
+    "requirements": {"type": "object"},
+    "documentation_url": {"type": "string", "format": "uri"}
+  }
+}

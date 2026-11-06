@@ -1,0 +1,3284 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Dedupe of explicit GitHub repo links in source lists. Inclusion is not integration or license approval.",
+  "sources": [
+    "all-repos-researched-2026-11-06.md",
+    "repo-animation-research-additions-2026-11-06.md",
+    "research-2d-3d-voiceover-repos-2026-11-06.md",
+    "vietnamese-voice-research-2026-11-06.md"
+  ],
+  "repositories": [
+    {
+      "repo_id": "3b1b/manim",
+      "url": "https://github.com/3b1b/manim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 62,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Bản ManimGL gốc của 3Blue1Brown: Python mô tả mobject, camera và các thao tác theo thời gian; renderer dựng scene thành frame/video giải thích. Khác Manim Community dù cùng họ."
+        }
+      ]
+    },
+    {
+      "repo_id": "3b1b/videos",
+      "url": "https://github.com/3b1b/videos",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 63,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Mã scene thật dùng trong video 3Blue1Brown; xem cách chia scene, dựng hình/toán, camera và animation trên ManimGL. Đây là kho project video, không phải thư viện độc lập."
+        }
+      ]
+    },
+    {
+      "repo_id": "academa-labs/manimgx",
+      "url": "https://github.com/academa-labs/manimgx",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 82,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Engine GPU dùng lõi Rust/wgpu nhưng giữ API Python kiểu Manim; preview scene trực tiếp rồi render math/3D video, nhắm giảm vòng lặp chờ render."
+        }
+      ]
+    },
+    {
+      "repo_id": "addce/generative-art",
+      "url": "https://github.com/addce/generative-art",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 108,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Vườn số p5.js dùng L-system tạo cây; click trồng cây, quy tắc fractal tạo nhánh và growth animation tiến theo thời gian, mùa được nội suy bằng slider."
+        }
+      ]
+    },
+    {
+      "repo_id": "ahujasid/blender-mcp",
+      "url": "https://github.com/ahujasid/blender-mcp",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 39,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**blender-mcp (nay là mcp-for-blender)** — https://github.com/ahujasid/blender-mcp"
+        }
+      ]
+    },
+    {
+      "repo_id": "akshinmrv/Voxa",
+      "url": "https://github.com/akshinmrv/Voxa",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 89,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "CLI Python nhận file/video, nhận dạng, tùy chọn chia speaker, dịch và tạo track speech bằng engine được chọn; sau đó mux audio với video. Có đường chạy local/offline và một số backend online."
+        }
+      ]
+    },
+    {
+      "repo_id": "AleBrito124356/remotion-video-templates",
+      "url": "https://github.com/AleBrito124356/remotion-video-templates",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 50,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Sáu mẫu gồm logo intro, lower third, kinetic type, chart, caption và promo; thay props để sinh video lặp lại theo nội dung."
+        }
+      ]
+    },
+    {
+      "repo_id": "anjaydo/vroid-ai-companion",
+      "url": "https://github.com/anjaydo/vroid-ai-companion",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 51,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Next.js/Three.js load VRM, backend sinh trả lời và audio bằng Gemini TTS; frontend phân tích audio theo frame để điều khiển mouth blendshape, đồng thời retarget clip Mixamo lên VRM."
+        }
+      ]
+    },
+    {
+      "repo_id": "antgroup/echomimic",
+      "url": "https://github.com/antgroup/echomimic",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 64,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Ảnh portrait + audio tạo animation; có thể thêm selected landmarks/pose để kiểm soát. Dùng audio embedding và diffusion video pipeline, cho phép tạo mặt/đầu chuyển động kèm khẩu hình."
+        }
+      ]
+    },
+    {
+      "repo_id": "antgroup/echomimic_v2",
+      "url": "https://github.com/antgroup/echomimic_v2",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 65,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Mở rộng từ talking-head sang semi-body: ảnh + audio + tùy chọn pose → video nửa người; model có pose encoder, motion module và audio processor."
+        }
+      ]
+    },
+    {
+      "repo_id": "Ashref-dev/openmotion",
+      "url": "https://github.com/Ashref-dev/openmotion",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 54,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Chuyển screenshot thành video giới thiệu có chuyển động; chọn một trong các template, cung cấp ảnh/thông tin và Remotion dựng các shot."
+        }
+      ]
+    },
+    {
+      "repo_id": "av/remotion-bits",
+      "url": "https://github.com/av/remotion-bits",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 56,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Các component làm sẵn cho chart, text reveal, transition và motion graphics; lắp vào composition thay vì bắt đầu từ hình học trống."
+        }
+      ]
+    },
+    {
+      "repo_id": "Azure12355/weilanx-claude-videos",
+      "url": "https://github.com/Azure12355/weilanx-claude-videos",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 88,
+          "section": "F. Repo Claude Code làm video (nghiên cứu riêng 06/11, đã clone + chạy thử what-if-animation)",
+          "summary": "**weilanx-claude-videos** (Azure12355) — https://github.com/Azure12355/weilanx-claude-videos"
+        }
+      ]
+    },
+    {
+      "repo_id": "AzurIce/ranim",
+      "url": "https://github.com/AzurIce/ranim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 81,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Engine animation Rust dùng wgpu, lấy cảm hứng từ Manim/JAnim; tác giả scene bằng Rust rồi render đồ họa GPU. Còn nhỏ hơn hệ Manim lâu đời."
+        }
+      ]
+    },
+    {
+      "repo_id": "BabylonJS/Babylon.js",
+      "url": "https://github.com/BabylonJS/Babylon.js",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 21,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**Babylon.js** — https://github.com/BabylonJS/Babylon.js"
+        }
+      ]
+    },
+    {
+      "repo_id": "bkmashiro/creative-lab",
+      "url": "https://github.com/bkmashiro/creative-lab",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 92,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Gallery demo HTML tự chứa: particles, fluid, fractal, waves, typographic motion và shader; mỗi file dùng Canvas/WebGL/CSS với cập nhật theo thời gian, không cần build."
+        }
+      ]
+    },
+    {
+      "repo_id": "BQ-Wang0511/PC-Talk",
+      "url": "https://github.com/BQ-Wang0511/PC-Talk",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 76,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Điều khiển talking-face theo style nói, mức khẩu hình và emotion; LAC tạo articulation/style signal, EMC điều khiển cảm xúc, LivePortrait dựng portrait video."
+        }
+      ]
+    },
+    {
+      "repo_id": "BsMediaVN/studio-agent",
+      "url": "https://github.com/BsMediaVN/studio-agent",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 49,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Studio self-hosted ưu tiên tiếng Việt: script/prompt → TTS nhiều nhân vật dựa trên VieNeu → video. Mode hoạt họa tạo character motion/caption qua HyperFrames; mode chân dung dùng SadTalker để lip-sync."
+        },
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 12,
+          "section": "",
+          "summary": "Studio self-hosted ghép script/prompt, TTS nhiều nhân vật tiếng Việt dựa trên VieNeu và các pipeline video/talking head."
+        }
+      ]
+    },
+    {
+      "repo_id": "cai-hust/manim-tutorial-CN",
+      "url": "https://github.com/cai-hust/manim-tutorial-CN",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 73,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Hướng dẫn tiếng Trung và ví dụ scene từ cơ bản đến nâng cao; học cú pháp rồi render từng file bằng Manim."
+        }
+      ]
+    },
+    {
+      "repo_id": "calcuforge/remotion-video-template",
+      "url": "https://github.com/calcuforge/remotion-video-template",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 51,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Template explainer/doc/product/news với 14 component; YAML khai báo từng section và dữ liệu, schema Zod đưa cấu hình vào Studio, rồi Remotion render các định dạng ngang/dọc/4K."
+        }
+      ]
+    },
+    {
+      "repo_id": "calesthio/OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 42,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Hệ thống sản xuất video theo workflow agent: phân tích brief, viết kịch bản, gọi công cụ/tạo asset rồi dựng composition; gồm nhiều pipeline và skill, bản thân nó là orchestrator chứ không phải một animation engine đơn lẻ."
+        }
+      ]
+    },
+    {
+      "repo_id": "cepko33/Pr3tz",
+      "url": "https://github.com/cepko33/Pr3tz",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 119,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Script/add-on Blender tạo torus knot procedural và animation; tham số curve/đường đi tạo geometry, keyframe/Action API điều khiển thời gian, có bước bake/export scene."
+        }
+      ]
+    },
+    {
+      "repo_id": "cezarc1/podcast_dub",
+      "url": "https://github.com/cezarc1/podcast_dub",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 91,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Pipeline speaker-aware: extract audio → Qwen ASR/forced alignment → diarize → lấy voice reference → dịch → Qwen3-TTS clone → căn/mix audio → MP4. Có chống drift và kiểm tra output."
+        }
+      ]
+    },
+    {
+      "repo_id": "chanjing-ai/Chanjing-Avatar",
+      "url": "https://github.com/chanjing-ai/Chanjing-Avatar",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 75,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Chanjing-Avatar 14B nhận ảnh tham chiếu, audio và prompt để tạo talking-avatar 720p. Repo công bố thêm nhánh V2V 5B/1.3B để dùng video nguồn và giữ motion khi tái tạo mặt."
+        }
+      ]
+    },
+    {
+      "repo_id": "chloe4ai/qishan",
+      "url": "https://github.com/chloe4ai/qishan",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 105,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Animatic chiến dịch Gia Cát Lượng: nhân vật/bối cảnh được vẽ theo thuật toán từng frame, sau đó mã hóa thành video; tham khảo tốt cho storytelling không dùng video model."
+        }
+      ]
+    },
+    {
+      "repo_id": "chloe4ai/three-visits",
+      "url": "https://github.com/chloe4ai/three-visits",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 104,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Animatic lịch sử vẽ từng frame bằng code trên canvas; timeline/shot code quyết định chuyển động và repo xuất file video thực."
+        }
+      ]
+    },
+    {
+      "repo_id": "chr15m/jsfxr",
+      "url": "https://github.com/chr15m/jsfxr",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 78,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**jsfxr** — https://github.com/chr15m/jsfxr"
+        }
+      ]
+    },
+    {
+      "repo_id": "cigar666/my_manim_projects",
+      "url": "https://github.com/cigar666/my_manim_projects",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 75,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Bộ project Manim cá nhân; đọc scene Python để tham khảo cách làm hiệu ứng/toán và sửa nội dung cho video mới."
+        }
+      ]
+    },
+    {
+      "repo_id": "cpduncan/blender-shapekey-bakery",
+      "url": "https://github.com/cpduncan/blender-shapekey-bakery",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 132,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Script bake geometry-node animation thành shape keys qua các frame để chuyển animation procedural của Blender sang engine/framework khác như Unity."
+        }
+      ]
+    },
+    {
+      "repo_id": "cpz/animation-to-mp4",
+      "url": "https://github.com/cpz/animation-to-mp4",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 17,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**animation-to-mp4** — https://github.com/cpz/animation-to-mp4"
+        }
+      ]
+    },
+    {
+      "repo_id": "CWen001/art-code",
+      "url": "https://github.com/CWen001/art-code",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 94,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Đưa ảnh tĩnh vào pipeline: trích vùng màu/cạnh/flow hint, sau đó shader GLSL advect texture có feedback và ghép lại; tạo chuyển động cục bộ bám cấu trúc ảnh."
+        }
+      ]
+    },
+    {
+      "repo_id": "dalsoop/voiceclonedub",
+      "url": "https://github.com/dalsoop/voiceclonedub",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 88,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Nhắm lồng tiếng video đúng khoảng thời gian gốc: transcription/translation, clone voice, đặt line theo mốc, kiểm tra drift/overlap/pacing và lưu versioned output."
+        }
+      ]
+    },
+    {
+      "repo_id": "DanielSWolf/rhubarb-lip-sync",
+      "url": "https://github.com/DanielSWolf/rhubarb-lip-sync",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 29,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "CLI đọc WAV/Ogg, nhận dạng lời hoặc phoneme rồi sinh danh sách mouth-shape cùng timestamp ở TSV/XML/JSON/DAT. Có tích hợp với OpenToonz, Moho, Spine và After Effects."
+        }
+      ]
+    },
+    {
+      "repo_id": "DECK6/dexa-gen-lab",
+      "url": "https://github.com/DECK6/dexa-gen-lab",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 88,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Gallery 500 sketch có code (400 p5.js, 100 Three.js, gồm shader); mỗi sketch nhận seed/context chung để chạy animation có thể tái lập và tạo thumbnail."
+        }
+      ]
+    },
+    {
+      "repo_id": "DLR-RM/BlenderProc",
+      "url": "https://github.com/DLR-RM/BlenderProc",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 33,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**BlenderProc** — https://github.com/DLR-RM/BlenderProc"
+        }
+      ]
+    },
+    {
+      "repo_id": "dogenthq/KorvaTTS",
+      "url": "https://github.com/dogenthq/KorvaTTS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 9,
+          "section": "",
+          "summary": "TTS ưu tiên tiếng Việt và câu pha tiếng Anh, dùng ONNX Runtime và các giọng có sẵn theo README."
+        }
+      ]
+    },
+    {
+      "repo_id": "DragonBones/DragonBonesJS",
+      "url": "https://github.com/DragonBones/DragonBonesJS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 43,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**DragonBonesJS** — https://github.com/DragonBones/DragonBonesJS"
+        }
+      ]
+    },
+    {
+      "repo_id": "ekza-space/ekza-studio",
+      "url": "https://github.com/ekza-space/ekza-studio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 38,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Studio 3D chạy trên trình duyệt cho GLB/VRM: tạo rig, điều khiển xương/IK, đặt key, chỉnh Dope Sheet và Graph Editor, rồi bake/export VRMA hoặc animation-only GLB."
+        }
+      ]
+    },
+    {
+      "repo_id": "elahlabs/elah",
+      "url": "https://github.com/elahlabs/elah",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 9,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**Elah** — https://github.com/elahlabs/elah"
+        }
+      ]
+    },
+    {
+      "repo_id": "emhayki/Animated-Mathematics",
+      "url": "https://github.com/emhayki/Animated-Mathematics",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 77,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Tập hợp visualization hàm số, fractal, đường cong và giải thích thuật toán bằng Manim Community; README hướng dẫn render scene bằng CLI `manim`."
+        }
+      ]
+    },
+    {
+      "repo_id": "erincatto/box2d",
+      "url": "https://github.com/erincatto/box2d",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 57,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Box2D** — https://github.com/erincatto/box2d"
+        }
+      ]
+    },
+    {
+      "repo_id": "estebanstifli/LocalText2Voice",
+      "url": "https://github.com/estebanstifli/LocalText2Voice",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 93,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Script/book → TTS theo segment → review/edit và audio mix → storyboard hình/clip → timeline → MP4 dài. Có offline engines lẫn cloud APIs tùy lựa chọn."
+        }
+      ]
+    },
+    {
+      "repo_id": "estebanstifli/OpenDub",
+      "url": "https://github.com/estebanstifli/OpenDub",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 84,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Desktop app tách thoại khỏi nhạc/SFX, nhận dạng và diarize speaker, căn từ, dịch, sinh từng đoạn giọng có tham chiếu emotion/voice, cho sửa/preview từng line rồi xuất MP4/audio/SRT."
+        }
+      ]
+    },
+    {
+      "repo_id": "evoluteur/flow-fields",
+      "url": "https://github.com/evoluteur/flow-fields",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 100,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Canvas tương tác cho hàng nghìn particle theo Perlin/curl noise, xoáy và sóng; người dùng chỉnh màu/zoom rồi tải ảnh, mặc định thiên về artwork hơn MP4."
+        }
+      ]
+    },
+    {
+      "repo_id": "excalidraw/excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 47,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Excalidraw** — https://github.com/excalidraw/excalidraw"
+        }
+      ]
+    },
+    {
+      "repo_id": "faarisaahmed/festival-star",
+      "url": "https://github.com/faarisaahmed/festival-star",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 120,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Short 3D khoảng 5 phút được dựng bằng Python `bpy`: script tạo môi trường, ánh sáng, thời tiết, chuyển động nhân vật và camera rồi render; model được mang vào riêng."
+        }
+      ]
+    },
+    {
+      "repo_id": "fabricjs/fabric.js",
+      "url": "https://github.com/fabricjs/fabric.js",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 51,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Fabric.js** — https://github.com/fabricjs/fabric.js"
+        }
+      ]
+    },
+    {
+      "repo_id": "facebookresearch/demucs",
+      "url": "https://github.com/facebookresearch/demucs",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 102,
+          "section": "E. Thành phần hỗ trợ voiceover (4)",
+          "summary": "Tách stem vocal khỏi accompaniment bằng Hybrid Transformer Demucs, để thay lời thoại mà giữ nhạc nền/SFX."
+        }
+      ]
+    },
+    {
+      "repo_id": "feitangyuan/doodle-anim",
+      "url": "https://github.com/feitangyuan/doodle-anim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 14,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**doodle-anim** — https://github.com/feitangyuan/doodle-anim"
+        }
+      ]
+    },
+    {
+      "repo_id": "fudan-generative-vision/hallo",
+      "url": "https://github.com/fudan-generative-vision/hallo",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 67,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Ảnh vuông + audio WAV làm đầu vào; Wav2Vec/Whisper audio feature và motion module điều khiển latent video diffusion để tạo portrait animation. README bản này yêu cầu audio tiếng Anh và GPU mạnh."
+        }
+      ]
+    },
+    {
+      "repo_id": "fudan-generative-vision/Hallo-Live",
+      "url": "https://github.com/fudan-generative-vision/Hallo-Live",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 72,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Từ text prompt sinh đồng thời luồng audio và video avatar bằng dual-stream DiT có attention liên-modal và KV cache, cho phản hồi streaming. Ví dụ gồm người thật và nhân vật anime."
+        }
+      ]
+    },
+    {
+      "repo_id": "fudan-generative-vision/hallo2",
+      "url": "https://github.com/fudan-generative-vision/hallo2",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 68,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Nâng cấp Hallo cho video dài/độ phân giải cao: inference_long đọc ảnh + audio, sinh theo cấu hình dài rồi có bước super-resolution. Repo minh họa clip dài nhiều phút đến khoảng một giờ."
+        }
+      ]
+    },
+    {
+      "repo_id": "gerlogu/ProceduralFPSAnimationsPlugin",
+      "url": "https://github.com/gerlogu/ProceduralFPSAnimationsPlugin",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 128,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Plugin Unreal Engine 4/5 cho FPS; curves và thay đổi giá trị runtime tạo recoil/weapon motion thay vì chỉ chạy animation clip cứng."
+        }
+      ]
+    },
+    {
+      "repo_id": "gokayfem/video-to-blender",
+      "url": "https://github.com/gokayfem/video-to-blender",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 122,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Skill cho coding agent chuyển video/ảnh/ý tưởng thành Blender Geometry/Shader/compositor node graph có thể chỉnh sửa; agent sinh node/script, người dùng kiểm tra output và render."
+        }
+      ]
+    },
+    {
+      "repo_id": "graphdeco-inria/gaussian-splatting",
+      "url": "https://github.com/graphdeco-inria/gaussian-splatting",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 38,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**gaussian-splatting (graphdeco-inria)** — https://github.com/graphdeco-inria/gaussian-splatting"
+        }
+      ]
+    },
+    {
+      "repo_id": "GraphiteEditor/Graphite",
+      "url": "https://github.com/GraphiteEditor/Graphite",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 133,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Ứng dụng đồ họa node-based với engine procedural 2D và motion graphics realtime; tạo/chỉnh đồ họa trong graph, phù hợp thử nghiệm animation tương tác hơn là render video theo timeline."
+        }
+      ]
+    },
+    {
+      "repo_id": "GregoryKogan/particle-flow",
+      "url": "https://github.com/GregoryKogan/particle-flow",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 101,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Sketch p5.js cho particle flow; vector field điều khiển chuyển động và các hạt lưu vệt thành họa tiết. Repo nhỏ, phù hợp đọc thuật toán."
+        }
+      ]
+    },
+    {
+      "repo_id": "haidrrrry/claude-remotion-skill",
+      "url": "https://github.com/haidrrrry/claude-remotion-skill",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 90,
+          "section": "F. Repo Claude Code làm video (nghiên cứu riêng 06/11, đã clone + chạy thử what-if-animation)",
+          "summary": "**claude-remotion-skill** (haidrrrry) — https://github.com/haidrrrry/claude-remotion-skill"
+        }
+      ]
+    },
+    {
+      "repo_id": "harry0703/MoneyPrinterTurbo",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 82,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**MoneyPrinterTurbo** — https://github.com/harry0703/MoneyPrinterTurbo"
+        }
+      ]
+    },
+    {
+      "repo_id": "hecomi/uLipSync",
+      "url": "https://github.com/hecomi/uLipSync",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 44,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Unity dùng MFCC và profile phoneme đã hiệu chỉnh theo giọng/model. Chạy realtime hoặc bake trước; baked data đưa vào Unity Timeline hay chuyển thành AnimationClip/blendshape. Có VRM và texture switching cho kiểu 2D."
+        }
+      ]
+    },
+    {
+      "repo_id": "helblazer811/ManimML",
+      "url": "https://github.com/helblazer811/ManimML",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 68,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Bộ scene minh họa neural network và khái niệm machine learning; mã Python dùng Manim Community để vẽ layer, neuron và luồng dữ liệu theo từng bước."
+        }
+      ]
+    },
+    {
+      "repo_id": "hexgrad/Kokoro-82M",
+      "url": "https://github.com/hexgrad/Kokoro-82M",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 62,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**Kokoro-82M** — https://github.com/hexgrad/Kokoro-82M"
+        }
+      ]
+    },
+    {
+      "repo_id": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 8,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**HyperFrames** — https://github.com/heygen-com/hyperframes"
+        }
+      ]
+    },
+    {
+      "repo_id": "HH1st/hoho-avatar",
+      "url": "https://github.com/HH1st/hoho-avatar",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 32,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Đọc PCM từ mic/file/TTS, đo tín hiệu rồi điều khiển năm mouth states và blink; cùng engine có renderer Canvas 2D và adapter Three.js/Live2D. Nhận audio trực tiếp hoặc dùng KittenTTS trong trình duyệt."
+        }
+      ]
+    },
+    {
+      "repo_id": "himanishpuri/PolyDub",
+      "url": "https://github.com/himanishpuri/PolyDub",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 87,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Python pipeline video → Whisper transcript → Argos Translate → XTTS voice cloning → fit/mix → video/subtitle. Có cache theo audio fingerprint; tùy chọn Demucs tách nhạc nền để giữ soundtrack."
+        }
+      ]
+    },
+    {
+      "repo_id": "howznguyen/shorts-kit",
+      "url": "https://github.com/howznguyen/shorts-kit",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 92,
+          "section": "F. Repo Claude Code làm video (nghiên cứu riêng 06/11, đã clone + chạy thử what-if-animation)",
+          "summary": "**shorts-kit** (howznguyen, seed) — https://github.com/howznguyen/shorts-kit — đã tính trong 65 mục deep-dive"
+        }
+      ]
+    },
+    {
+      "repo_id": "initialcommit-com/git-sim",
+      "url": "https://github.com/initialcommit-com/git-sim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 78,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Mô phỏng và phát lại thao tác Git bằng visual layer/Manim; biến lịch sử lệnh và trạng thái repository thành video/animation giải thích."
+        }
+      ]
+    },
+    {
+      "repo_id": "isabellagreco1997/script-to-video",
+      "url": "https://github.com/isabellagreco1997/script-to-video",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 15,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**script-to-video** — https://github.com/isabellagreco1997/script-to-video"
+        }
+      ]
+    },
+    {
+      "repo_id": "isl-org/Open3D",
+      "url": "https://github.com/isl-org/Open3D",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 35,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**Open3D** — https://github.com/isl-org/Open3D"
+        }
+      ]
+    },
+    {
+      "repo_id": "israelbenatar/kestrel-studio",
+      "url": "https://github.com/israelbenatar/kestrel-studio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 16,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**kestrel-studio** — https://github.com/israelbenatar/kestrel-studio"
+        }
+      ]
+    },
+    {
+      "repo_id": "JacquesLucke/animation_nodes",
+      "url": "https://github.com/JacquesLucke/animation_nodes",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 118,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Hệ node visual scripting cho motion graphics Blender; nối node để sinh/biến đổi data, geometry và thuộc tính theo thời gian thay vì viết từng keyframe tay."
+        }
+      ]
+    },
+    {
+      "repo_id": "jeertmans/manim-slides",
+      "url": "https://github.com/jeertmans/manim-slides",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 66,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Lớp trình chiếu cho scene Manim; chia scene thành slide/đoạn, điều khiển chuyển tiếp trực tiếp để dùng bài giảng vừa live vừa xuất video."
+        }
+      ]
+    },
+    {
+      "repo_id": "jerejoensuu/procedural-animation",
+      "url": "https://github.com/jerejoensuu/procedural-animation",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 124,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Demo Unity về creature locomotion; inverse kinematics và vị trí địa hình quyết định nơi đặt từng chân khi nhân vật di chuyển."
+        }
+      ]
+    },
+    {
+      "repo_id": "jianfch/stable-ts",
+      "url": "https://github.com/jianfch/stable-ts",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 103,
+          "section": "E. Thành phần hỗ trợ voiceover (4)",
+          "summary": "Bản mở rộng Whisper sửa mốc từ bằng VAD/silence suppression, regroup theo dấu câu và có bước refine timestamp."
+        }
+      ]
+    },
+    {
+      "repo_id": "jkhuhnke11/generative-art-processing",
+      "url": "https://github.com/jkhuhnke11/generative-art-processing",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 90,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Nhiều tác phẩm thuật toán bằng Processing, Python và p5.js, gồm sóng động, noise và hiệu ứng; mở/chạy sketch riêng để xem mã sinh hình."
+        }
+      ]
+    },
+    {
+      "repo_id": "jkjkil4/JAnim",
+      "url": "https://github.com/jkjkil4/JAnim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 79,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Engine animation lập trình hướng Manim, có phản hồi preview gần thời gian thực; viết scene bằng API của JAnim để xem/chỉnh nhanh trước khi xuất."
+        }
+      ]
+    },
+    {
+      "repo_id": "joaoCarvalho1000/audio-as-code",
+      "url": "https://github.com/joaoCarvalho1000/audio-as-code",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 79,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**audio-as-code** — https://github.com/joaoCarvalho1000/audio-as-code"
+        }
+      ]
+    },
+    {
+      "repo_id": "johnnyawesome/ConnectedParticles",
+      "url": "https://github.com/johnnyawesome/ConnectedParticles",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 110,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Particle effect p5.js: điểm chuyển động, tránh vật cản/chuột và nối các hạt gần nhau để hình thành mạng chuyển động."
+        }
+      ]
+    },
+    {
+      "repo_id": "johnnyawesome/MatrixRain",
+      "url": "https://github.com/johnnyawesome/MatrixRain",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 111,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Hiệu ứng Matrix Rain bằng JavaScript/p5.js; từng cột ký tự rơi, đổi ký tự và độ sáng theo frame. Có thể tái dùng như background loop."
+        }
+      ]
+    },
+    {
+      "repo_id": "JonnyBurger/ledevevent-stinger",
+      "url": "https://github.com/JonnyBurger/ledevevent-stinger",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 45,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Stinger chuyển cảnh cho livestream/Twitch; scene ngắn được tạo bằng code và render thành asset video trong suốt/transition."
+        }
+      ]
+    },
+    {
+      "repo_id": "JonnyBurger/react-summit-talk",
+      "url": "https://github.com/JonnyBurger/react-summit-talk",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 46,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Source của một bài nói React Summit được biên tập bằng React/Remotion; cho thấy cách dựng slide, nội dung và nhịp video từ component."
+        }
+      ]
+    },
+    {
+      "repo_id": "JonnyBurger/spring-loaded",
+      "url": "https://github.com/JonnyBurger/spring-loaded",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 43,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Mã nguồn animation logo sự kiện Apple “Spring Loaded”; có thể đọc scene Remotion để học easing, scale và timing cho logo reveal."
+        }
+      ]
+    },
+    {
+      "repo_id": "JonnyBurger/wavy-meme",
+      "url": "https://github.com/JonnyBurger/wavy-meme",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 44,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Hiệu ứng chữ/hình gợn sóng kiểu TikTok được dựng trong Remotion; điều chỉnh tham số theo frame rồi render clip."
+        }
+      ]
+    },
+    {
+      "repo_id": "jsfan3/autodub-local",
+      "url": "https://github.com/jsfan3/autodub-local",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 90,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Dành cho webinar, talk, interview dài: trích mono audio, ASR, diarization, dịch, synthesize từng đoạn và mux thành MP4. Tập trung giữ duration/pause gần source thay vì mouth-level lip-sync."
+        }
+      ]
+    },
+    {
+      "repo_id": "KDE/glaxnimate",
+      "url": "https://github.com/KDE/glaxnimate",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 27,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Dựng shape vector và keyframe trên timeline, chỉnh đường cong/easing rồi xuất SVG animation, Lottie hoặc video. Có Python scripting/plugin và khả năng render frame/headless."
+        }
+      ]
+    },
+    {
+      "repo_id": "KDE/krita",
+      "url": "https://github.com/KDE/krita",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 26,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Tạo raster animation bằng animated layer và timeline; mỗi drawing được giữ ở frame tương ứng. Khi xuất, Krita render ảnh tuần tự rồi gọi FFmpeg để đóng thành GIF/MP4/MKV. Tài liệu lưu ý Krita không phải công cụ dựng audio/video nhiều track."
+        }
+      ]
+    },
+    {
+      "repo_id": "kelano86/what-if-animation",
+      "url": "https://github.com/kelano86/what-if-animation",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 87,
+          "section": "F. Repo Claude Code làm video (nghiên cứu riêng 06/11, đã clone + chạy thử what-if-animation)",
+          "summary": "**what-if-animation** (kelano86) — https://github.com/kelano86/what-if-animation — đã cài studio, render thử Cast sheet + Rewind 2s"
+        }
+      ]
+    },
+    {
+      "repo_id": "KhronosGroup/glTF-Sample-Viewer",
+      "url": "https://github.com/KhronosGroup/glTF-Sample-Viewer",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 28,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**glTF Sample Viewer** — https://github.com/KhronosGroup/glTF-Sample-Viewer"
+        }
+      ]
+    },
+    {
+      "repo_id": "KlingAIResearch/LivePortrait",
+      "url": "https://github.com/KlingAIResearch/LivePortrait",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 70,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Ảnh/video nguồn + video chuyển động → trích motion, retarget/stitch lên portrait và tạo video. Có crop tự động, motion template và video-to-video."
+        }
+      ]
+    },
+    {
+      "repo_id": "Koalhack/PerlinASCII",
+      "url": "https://github.com/Koalhack/PerlinASCII",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 112,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Animation ASCII procedural: Perlin noise điều khiển giá trị/ký tự, tạo chuyển động liên tục thay vì clip sprite có sẵn."
+        }
+      ]
+    },
+    {
+      "repo_id": "konvajs/konva",
+      "url": "https://github.com/konvajs/konva",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 52,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Konva** — https://github.com/konvajs/konva"
+        }
+      ]
+    },
+    {
+      "repo_id": "krillinai/OpenCreator",
+      "url": "https://github.com/krillinai/OpenCreator",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 82,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Ứng dụng workflow cho dịch video, sinh TTS từ subtitle, render ngang/dọc và có quy trình stick-figure animation gồm script, narration, timing, storyboard, captions và video. Các model giọng/hình/video được chọn từ provider cấu hình."
+        }
+      ]
+    },
+    {
+      "repo_id": "kyutai-labs/pocket-tts",
+      "url": "https://github.com/kyutai-labs/pocket-tts",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 67,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**pocket-tts** — https://github.com/kyutai-labs/pocket-tts"
+        }
+      ]
+    },
+    {
+      "repo_id": "langswap-app/langswap",
+      "url": "https://github.com/langswap-app/langswap",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 83,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Docker pipeline local: ASR → dịch → voice-cloned TTS → fit audio vào khoảng thời gian → mux video và SRT. Hỗ trợ thuật toán speedup/stretch và nhiều backend TTS."
+        }
+      ]
+    },
+    {
+      "repo_id": "leonlaser/p5js-particle-flowfield",
+      "url": "https://github.com/leonlaser/p5js-particle-flowfield",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 97,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Demo flow-field p5.js có cấu hình kích thước ô, tốc độ field, số particle và độ dài vệt; mỗi frame lấy vector ô hiện tại để cập nhật hạt."
+        }
+      ]
+    },
+    {
+      "repo_id": "m-bain/whisperX",
+      "url": "https://github.com/m-bain/whisperX",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 100,
+          "section": "E. Thành phần hỗ trợ voiceover (4)",
+          "summary": "ASR batched, forced alignment bằng wav2vec2 và tùy chọn pyannote diarization; xuất mốc từng từ và speaker label."
+        }
+      ]
+    },
+    {
+      "repo_id": "maikramer/AiGameKit",
+      "url": "https://github.com/maikramer/AiGameKit",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 131,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Thư mục Animator3D cung cấp CLI procedural animation qua Blender Python API; script tạo/chỉnh scene/pose rồi dùng Blender dựng frame. Nằm trong repo AI/game asset lớn hơn."
+        }
+      ]
+    },
+    {
+      "repo_id": "malhotra5/Manim-Tutorial",
+      "url": "https://github.com/malhotra5/Manim-Tutorial",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 74,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Tutorial ManimGL với các scene nhỏ; minh họa cách biến hình học/toán thành lớp đối tượng và lệnh animation. Cần để ý phiên bản Manim cũ/mới."
+        }
+      ]
+    },
+    {
+      "repo_id": "manim-kindergarten/manim_sandbox",
+      "url": "https://github.com/manim-kindergarten/manim_sandbox",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 71,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Kho scene cộng đồng Manim, có code thử nghiệm/animation mẫu; chọn file/scene phù hợp rồi chạy bằng phiên bản Manim tương thích."
+        }
+      ]
+    },
+    {
+      "repo_id": "ManimCommunity/awesome-manim",
+      "url": "https://github.com/ManimCommunity/awesome-manim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 72,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Danh mục creator, nội dung, plugin và tài liệu Manim; dùng để tìm thêm scene/repo, không tạo animation khi chạy riêng."
+        }
+      ]
+    },
+    {
+      "repo_id": "ManimCommunity/manim-voiceover",
+      "url": "https://github.com/ManimCommunity/manim-voiceover",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 65,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Plugin đồng bộ narration với scene Manim; đánh dấu mốc lời thoại để các animation chờ/đi theo âm thanh, rồi xuất video giải thích có voiceover."
+        }
+      ]
+    },
+    {
+      "repo_id": "ManimCommunity/manim_editor",
+      "url": "https://github.com/ManimCommunity/manim_editor",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 67,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Web presenter/editor cho animation Manim; dùng scene đã render để xem và trình bày nội dung theo thứ tự. Hữu ích khâu phát lại, không thay renderer scene."
+        }
+      ]
+    },
+    {
+      "repo_id": "marcelo-earth/generative-manim",
+      "url": "https://github.com/marcelo-earth/generative-manim",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 70,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Prototype web/Streamlit nhận prompt và dùng GPT để soạn code Manim; sau đó chạy renderer tạo video 2D. Phần sinh mã phụ thuộc model/API."
+        }
+      ]
+    },
+    {
+      "repo_id": "Mark5484/vibe-lab",
+      "url": "https://github.com/Mark5484/vibe-lab",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 93,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Bộ sketch Python/Pygame có animated spiral, grid waves và particle motion; chạy menu hoặc từng script, cập nhật vị trí theo frame và có phím điều khiển."
+        }
+      ]
+    },
+    {
+      "repo_id": "Matheart/manim-physics",
+      "url": "https://github.com/Matheart/manim-physics",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 64,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Plugin mô phỏng các nhánh vật lý trong Manim; định nghĩa đối tượng/đại lượng và cập nhật trạng thái rồi render thành cảnh động."
+        }
+      ]
+    },
+    {
+      "repo_id": "mattdesl/canvas-sketch",
+      "url": "https://github.com/mattdesl/canvas-sketch",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 135,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Framework JavaScript/browser cho generative artwork; sketch trả về draw/update callback, tool cung cấp seed/preview/render-export. Phù hợp viết animation/loop riêng."
+        }
+      ]
+    },
+    {
+      "repo_id": "maxwellito/vivus",
+      "url": "https://github.com/maxwellito/vivus",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 55,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Vivus** — https://github.com/maxwellito/vivus"
+        }
+      ]
+    },
+    {
+      "repo_id": "meet447/claude-animated-shorts",
+      "url": "https://github.com/meet447/claude-animated-shorts",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 91,
+          "section": "F. Repo Claude Code làm video (nghiên cứu riêng 06/11, đã clone + chạy thử what-if-animation)",
+          "summary": "**claude-animated-shorts** (meet447 → đã chuyển sang mromidev) — https://github.com/meet447/claude-animated-shorts (gốc 404, đã clone bản mromidev)"
+        }
+      ]
+    },
+    {
+      "repo_id": "MeroVinggen/Godot-Spider-Procedural-Animation",
+      "url": "https://github.com/MeroVinggen/Godot-Spider-Procedural-Animation",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 123,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Spider procedural trong Godot; script/shader điều khiển gait và bước chân, thay vì phát sprite sheet có sẵn. Dùng làm mẫu locomotion cho character."
+        }
+      ]
+    },
+    {
+      "repo_id": "Meskh/PerlinNoiseFlowField2D",
+      "url": "https://github.com/Meskh/PerlinNoiseFlowField2D",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 96,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Lưới vector lấy hướng từ Perlin noise thay đổi theo thời gian; hàng nghìn particle đi theo hướng và để lại vệt trên canvas p5.js."
+        }
+      ]
+    },
+    {
+      "repo_id": "met4citizen/HeadTTS",
+      "url": "https://github.com/met4citizen/HeadTTS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 41,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "TTS neural dựa trên Kokoro, chạy WebGPU/WASM trong browser hoặc Node. Ngoài audio, trả timestamp từ và viseme để avatar có thể animate khớp lời."
+        }
+      ]
+    },
+    {
+      "repo_id": "met4citizen/TalkingHead",
+      "url": "https://github.com/met4citizen/TalkingHead",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 40,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "JavaScript/Three.js nạp avatar GLB và animation FBX. speakText tạo audio bằng TTS cấu hình sẵn, dùng word timing/viseme để animate miệng; speakAudio nhận audio ngoài và dữ liệu viseme/blendshape. Có callback subtitle."
+        }
+      ]
+    },
+    {
+      "repo_id": "mfais473/Virtual-Interactive-Assistant-3D",
+      "url": "https://github.com/mfais473/Virtual-Interactive-Assistant-3D",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 53,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Electron + Three.js hiển thị VRM desktop avatar; Gemini xử lý voice conversation/TTS, Web Audio đo âm lượng để mở miệng; tag cảm xúc/gesture điều khiển expression và clip VRMA."
+        }
+      ]
+    },
+    {
+      "repo_id": "michaelkolesidis/perlin-landscape",
+      "url": "https://github.com/michaelkolesidis/perlin-landscape",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 109,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Cảnh địa hình được tạo từ Perlin noise trong p5.js; thay noise/seed/tham số để sinh landscape, hữu ích làm nền procedural hơn là pipeline phim hoàn chỉnh."
+        }
+      ]
+    },
+    {
+      "repo_id": "mifi/editly",
+      "url": "https://github.com/mifi/editly",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 13,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**Editly** — https://github.com/mifi/editly"
+        }
+      ]
+    },
+    {
+      "repo_id": "mikeascendx/aether",
+      "url": "https://github.com/mikeascendx/aether",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 102,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Canvas vanilla JS cho curl-noise flow field; thêm kaleidoscope/mirror, tương tác chuột và chia sẻ tham số bằng URL. Chạy realtime, không phải timeline MP4."
+        }
+      ]
+    },
+    {
+      "repo_id": "mikedh/trimesh",
+      "url": "https://github.com/mikedh/trimesh",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 37,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**trimesh** — https://github.com/mikedh/trimesh"
+        }
+      ]
+    },
+    {
+      "repo_id": "MinaPecheux/UnityTutorials-ProceduralAnimations",
+      "url": "https://github.com/MinaPecheux/UnityTutorials-ProceduralAnimations",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 127,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Mã và bài hướng dẫn tạo procedural animation bằng Unity Animation Rigging; rig constraints điều khiển bones/pose theo logic C#."
+        }
+      ]
+    },
+    {
+      "repo_id": "mkkellogg/GaussianSplats3D",
+      "url": "https://github.com/mkkellogg/GaussianSplats3D",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 26,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**GaussianSplats3D** — https://github.com/mkkellogg/GaussianSplats3D"
+        }
+      ]
+    },
+    {
+      "repo_id": "mojs/mojs",
+      "url": "https://github.com/mojs/mojs",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 54,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**mo.js** — https://github.com/mojs/mojs"
+        }
+      ]
+    },
+    {
+      "repo_id": "morevnaproject-org/papagayo-ng",
+      "url": "https://github.com/morevnaproject-org/papagayo-ng",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 28,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Nhập bản ghi thoại và script, đặt từ/phoneme lên waveform rồi chỉnh thời điểm khẩu hình. Xuất cue tương thích OpenToonz để mỗi mouth shape xuất hiện đúng frame."
+        }
+      ]
+    },
+    {
+      "repo_id": "mrxz/wLipSync",
+      "url": "https://github.com/mrxz/wLipSync",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 77,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**wLipSync** — https://github.com/mrxz/wLipSync"
+        }
+      ]
+    },
+    {
+      "repo_id": "myshell-ai/OpenVoice",
+      "url": "https://github.com/myshell-ai/OpenVoice",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 72,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**OpenVoice** — https://github.com/myshell-ai/OpenVoice"
+        }
+      ]
+    },
+    {
+      "repo_id": "neosapience/TA2.0",
+      "url": "https://github.com/neosapience/TA2.0",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 73,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Ảnh tham chiếu + giọng nói + prompt tùy chọn → avatar video biểu cảm. Inference script nạp model/config, chuẩn hóa ảnh và đóng audio vào MP4; release dùng safetensors và manifest kiểm tra hash."
+        }
+      ]
+    },
+    {
+      "repo_id": "nerfstudio-project/nerfstudio",
+      "url": "https://github.com/nerfstudio-project/nerfstudio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 36,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**Nerfstudio** — https://github.com/nerfstudio-project/nerfstudio"
+        }
+      ]
+    },
+    {
+      "repo_id": "nirholas/voice",
+      "url": "https://github.com/nirholas/voice",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 47,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Client JavaScript nối ba endpoint: ASR audio→text, TTS text→audio và Audio2Face audio→ARKit blendshape frames. Có thể chuyển frame vào avatar GLB theo current audio time."
+        }
+      ]
+    },
+    {
+      "repo_id": "njanakiev/blender-scripting",
+      "url": "https://github.com/njanakiev/blender-scripting",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 121,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Bài tập/script Blender Python từ đơn giản đến phức tạp; chạy script trong Blender/background để tạo scene và render frame, có ví dụ animation handler."
+        }
+      ]
+    },
+    {
+      "repo_id": "nrwl/remotion-template",
+      "url": "https://github.com/nrwl/remotion-template",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 52,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Monorepo Nx chứa composition React dùng lại giữa website/player và video mạng xã hội; Nx điều phối studio, render MP4 và task/cache."
+        }
+      ]
+    },
+    {
+      "repo_id": "NVIDIA/Audio2Face-3D-Samples",
+      "url": "https://github.com/NVIDIA/Audio2Face-3D-Samples",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 45,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Sample client/service chuyển audio thành ARKit facial blendshapes để phát trên avatar. Quick-start triển khai container Audio2Face-3D NIM, client stream audio rồi nhận dữ liệu weight theo frame."
+        }
+      ]
+    },
+    {
+      "repo_id": "NVIDIA/Audio2Face-3D-SDK",
+      "url": "https://github.com/NVIDIA/Audio2Face-3D-SDK",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 46,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "SDK C++ mẫu cho pipeline streaming: audio accumulator nhận các chunk PCM, executor xử lý Audio2Face/Audio2Emotion và trả biểu cảm/face curves theo thời gian."
+        }
+      ]
+    },
+    {
+      "repo_id": "oframe/ogl",
+      "url": "https://github.com/oframe/ogl",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 23,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**OGL** — https://github.com/oframe/ogl"
+        }
+      ]
+    },
+    {
+      "repo_id": "Ohswedd/pymotion",
+      "url": "https://github.com/Ohswedd/pymotion",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 11,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**PyMotion** — https://github.com/Ohswedd/pymotion"
+        }
+      ]
+    },
+    {
+      "repo_id": "OpenAnimationLibrary/opentoonz-headless",
+      "url": "https://github.com/OpenAnimationLibrary/opentoonz-headless",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 30,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Bản OpenToonz chạy không GUI, phơi chức năng vẽ qua JSON-RPC trên stdin/stdout để chương trình ngoài gọi. Có thể dùng làm cầu nối agent/script → hình vẽ/render. Tài liệu nêu sound column trên Xsheet chưa hỗ trợ headless."
+        }
+      ]
+    },
+    {
+      "repo_id": "OpenBMB/VoxCPM",
+      "url": "https://github.com/OpenBMB/VoxCPM",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 66,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**VoxCPM** — https://github.com/OpenBMB/VoxCPM"
+        }
+      ]
+    },
+    {
+      "repo_id": "OpenTalker/SadTalker",
+      "url": "https://github.com/OpenTalker/SadTalker",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 62,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Ảnh chân dung + driving audio → ước lượng motion coefficients/pose → sinh chuyển động đầu/mặt và video. Có CLI/WebUI, full-image/still mode và enhancer; TTS phải tạo audio ở bước riêng."
+        }
+      ]
+    },
+    {
+      "repo_id": "OpenTalker/video-retalking",
+      "url": "https://github.com/OpenTalker/video-retalking",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 69,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Nhận video talking-head và audio khác; lần lượt chuẩn hóa expression, chạy audio lip-sync, rồi face enhancement. Có tham số chọn expression, inference script và MP4 đầu ra."
+        }
+      ]
+    },
+    {
+      "repo_id": "opentoonz/opentoonz",
+      "url": "https://github.com/opentoonz/opentoonz",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 23,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Ghép các level vẽ, layer, video và audio vào Xsheet/Timeline; keyframe điều khiển camera, pegbar, layer và FX. Có ToonzScript dựa trên ECMAScript để chạy chuỗi lệnh. Có thể nhập DAT mouth-cue do Papagayo tạo rồi gán drawing cho từng phoneme."
+        }
+      ]
+    },
+    {
+      "repo_id": "Orama-Interactive/Pixelorama",
+      "url": "https://github.com/Orama-Interactive/Pixelorama",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 45,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Pixelorama** — https://github.com/Orama-Interactive/Pixelorama"
+        }
+      ]
+    },
+    {
+      "repo_id": "pawanosman/programmatic-motion-video",
+      "url": "https://github.com/pawanosman/programmatic-motion-video",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 12,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**programmatic-motion-video** — https://github.com/pawanosman/programmatic-motion-video"
+        }
+      ]
+    },
+    {
+      "repo_id": "pencil2d/pencil",
+      "url": "https://github.com/pencil2d/pencil",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 25,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Vẽ từng frame bằng bitmap hoặc vector, xếp frame trên timeline/layer rồi preview chuỗi hình. Tập trung vào hoạt hình vẽ tay và thử chuyển động, không có pipeline TTS hoặc tự sinh cảnh."
+        }
+      ]
+    },
+    {
+      "repo_id": "phaserjs/phaser",
+      "url": "https://github.com/phaserjs/phaser",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 50,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Phaser** — https://github.com/phaserjs/phaser"
+        }
+      ]
+    },
+    {
+      "repo_id": "piqnt/planck.js",
+      "url": "https://github.com/piqnt/planck.js",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 58,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Planck.js** — https://github.com/piqnt/planck.js"
+        }
+      ]
+    },
+    {
+      "repo_id": "PixarAnimationStudios/OpenUSD",
+      "url": "https://github.com/PixarAnimationStudios/OpenUSD",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 34,
+          "section": "C. 3D offline / Blender / NeRF (7) — 7 repo",
+          "summary": "**OpenUSD** — https://github.com/PixarAnimationStudios/OpenUSD"
+        }
+      ]
+    },
+    {
+      "repo_id": "playcanvas/engine",
+      "url": "https://github.com/playcanvas/engine",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 22,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**PlayCanvas Engine** — https://github.com/playcanvas/engine"
+        }
+      ]
+    },
+    {
+      "repo_id": "playcanvas/supersplat",
+      "url": "https://github.com/playcanvas/supersplat",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 24,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**SuperSplat Editor** — https://github.com/playcanvas/supersplat"
+        }
+      ]
+    },
+    {
+      "repo_id": "pnnbao97/VieNeu-TTS",
+      "url": "https://github.com/pnnbao97/VieNeu-TTS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 65,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**VieNeu-TTS-v2** — https://github.com/pnnbao97/VieNeu-TTS"
+        },
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 7,
+          "section": "",
+          "summary": "SDK nhận văn bản tiếng Việt, chọn giọng có sẵn hoặc tham chiếu giọng, sinh waveform. README mô tả v3 Turbo 48 kHz qua ONNX CPU hoặc backend GPU; phiên bản/model khác có đặc tính khác."
+        }
+      ]
+    },
+    {
+      "repo_id": "processing/processing4",
+      "url": "https://github.com/processing/processing4",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 136,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Source Processing IDE/core; sketch Java thường có `setup()` + `draw()` chạy theo frame, tạo hình động trong cửa sổ sketch và có thể ghi/xuất frame bằng thư viện phù hợp."
+        }
+      ]
+    },
+    {
+      "repo_id": "purzbeats/gen-art-playground",
+      "url": "https://github.com/purzbeats/gen-art-playground",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 95,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Playground React cho sketch p5.js 2D và Three.js 3D; API animation cung cấp time/frame toàn cục để tạo chuyển động, có công cụ xem và xuất ảnh."
+        }
+      ]
+    },
+    {
+      "repo_id": "pyannote/pyannote-audio",
+      "url": "https://github.com/pyannote/pyannote-audio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 101,
+          "section": "E. Thành phần hỗ trợ voiceover (4)",
+          "summary": "Bộ model phát hiện speech, đổi lượt nói, overlap, voice activity và speaker embedding; pipeline trả start/end theo speaker."
+        }
+      ]
+    },
+    {
+      "repo_id": "QwenAudio/CosyVoice",
+      "url": "https://github.com/QwenAudio/CosyVoice",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 73,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**CosyVoice** — https://github.com/QwenAudio/CosyVoice"
+        }
+      ]
+    },
+    {
+      "repo_id": "Rai220/talking-circle",
+      "url": "https://github.com/Rai220/talking-circle",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 31,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Lấy bốn ảnh trạng thái miệng/mắt và audio. Với mỗi frame, tính RMS theo cửa sổ ngắn để chọn miệng đóng/hơi mở/mở rộng; thêm blink theo chu kỳ rồi dựng video vòng tròn. Có bước gọi TTS ngoài để tạo thoại từ text."
+        }
+      ]
+    },
+    {
+      "repo_id": "rany2/edge-tts",
+      "url": "https://github.com/rany2/edge-tts",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 64,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**edge-tts** — https://github.com/rany2/edge-tts"
+        }
+      ]
+    },
+    {
+      "repo_id": "rberenguel/sketches",
+      "url": "https://github.com/rberenguel/sketches",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 89,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Sổ tay generative art p5.js: particle flow, noise, synthwave và hình học; code/seed tạo lại artwork, một số sketch có chuyển động và có thể dùng làm nền tảng loop."
+        }
+      ]
+    },
+    {
+      "repo_id": "receptron/avatarscript",
+      "url": "https://github.com/receptron/avatarscript",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 81,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**AvatarScript** — https://github.com/receptron/avatarscript"
+        }
+      ]
+    },
+    {
+      "repo_id": "receptron/mulmocast-cli",
+      "url": "https://github.com/receptron/mulmocast-cli",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 80,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**MulmoCast (mulmocast-cli)** — https://github.com/receptron/mulmocast-cli"
+        }
+      ]
+    },
+    {
+      "repo_id": "Remocn/remocn",
+      "url": "https://github.com/Remocn/remocn",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 55,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Thư viện animation, transition, background và scene cho Remotion; cài component vào project rồi điều chỉnh props/timing."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/anime-example",
+      "url": "https://github.com/remotion-dev/anime-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 36,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Ví dụ ghép Anime.js vào composition Remotion; cho thấy cách dùng timeline/animation API khác trong môi trường render theo frame."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/d3-example",
+      "url": "https://github.com/remotion-dev/d3-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 38,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Dùng D3 để tạo đồ họa dữ liệu trong Remotion; dữ liệu và trạng thái chart được ghép thành các frame video."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/github-unwrapped",
+      "url": "https://github.com/remotion-dev/github-unwrapped",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 30,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Tạo video tổng kết năm của GitHub từ dữ liệu hoạt động lập trình; dữ liệu đầu vào được đưa vào các component/charts theo timeline Remotion."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/glb-example",
+      "url": "https://github.com/remotion-dev/glb-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 32,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Ví dụ khác về hoạt họa asset `.glb` với React Three Fiber; model và camera được điều khiển trong scene, Remotion xuất thành MP4."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/light-leak-example",
+      "url": "https://github.com/remotion-dev/light-leak-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 40,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Một transition light-leak tạo bằng code; xem cách dùng lớp sáng, alpha và timing để nối hai shot."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/mapbox-example",
+      "url": "https://github.com/remotion-dev/mapbox-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 37,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Dựng bản đồ/camera Mapbox bên trong video; điều khiển góc nhìn và trạng thái bản đồ bằng thời gian scene."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/morph-text",
+      "url": "https://github.com/remotion-dev/morph-text",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 34,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Demo biến đổi hình dạng chữ theo timeline Remotion; hữu ích để học morphing typography và tái sử dụng effect trong composition."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/remotion-gl-transitions",
+      "url": "https://github.com/remotion-dev/remotion-gl-transitions",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 39,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Bộ ví dụ chuyển cảnh OpenGL/shader cho Remotion; shader trộn hai hình theo tiến độ transition và được render thành video."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/remotion-three-gltf-example",
+      "url": "https://github.com/remotion-dev/remotion-three-gltf-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 31,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Demo nạp mô hình GLTF bằng `useGLTF`, đặt vào scene 3D rồi render khung hình qua Remotion; phù hợp product shot 3D."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-audiogram",
+      "url": "https://github.com/remotion-dev/template-audiogram",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 22,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Template video podcast: đặt audio, waveform, lời nói/nhãn và các lớp hình vào composition React; Remotion tính từng frame rồi render clip."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-code-hike",
+      "url": "https://github.com/remotion-dev/template-code-hike",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 25,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Template hoạt họa code snippet: trình bày đoạn mã và trạng thái highlight theo thời gian để làm video giải thích code."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-music-visualization",
+      "url": "https://github.com/remotion-dev/template-music-visualization",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 23,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Template biến đoạn nhạc thành video mạng xã hội; thay nhạc và thông số composition để dựng visualizer đồng bộ audio."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-prompt-to-motion-graphics-saas",
+      "url": "https://github.com/remotion-dev/template-prompt-to-motion-graphics-saas",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 29,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Starter SaaS cho ứng dụng tạo motion graphic theo prompt; phần web nhận cấu hình, Remotion composition biến cấu hình thành scene và video."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-prompt-to-video",
+      "url": "https://github.com/remotion-dev/template-prompt-to-video",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 28,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Pipeline prompt → câu chuyện, hình ảnh và voiceover → chuỗi scene Remotion; cần dịch vụ/credential cho phần tạo media, sau đó render bằng code."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-skia",
+      "url": "https://github.com/remotion-dev/template-skia",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 27,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Starter Remotion có React Native Skia; vẽ đồ họa trên canvas Skia theo frame, hữu ích khi muốn nhiều shape/particle hơn DOM/CSS."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-three",
+      "url": "https://github.com/remotion-dev/template-three",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 26,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Boilerplate Remotion + React Three Fiber; dựng scene 3D bằng component React, lấy frame của Remotion làm thời gian để render video ổn định."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/template-tiktok",
+      "url": "https://github.com/remotion-dev/template-tiktok",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 24,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Dựng caption TikTok theo từng từ; Whisper.cpp tạo/transcribe lời, còn composition Remotion quyết định vị trí, màu, nhịp hiện chữ và render video."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/text-warping",
+      "url": "https://github.com/remotion-dev/text-warping",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 35,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Demo uốn chữ theo path bằng API `warpPath`; mã xác định hình học và frame, phù hợp logo/title động."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/three-particles",
+      "url": "https://github.com/remotion-dev/three-particles",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 33,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Chuyển demo hạt 3D sang Remotion; vị trí/hình dạng particle thay đổi theo thời gian scene, phù hợp mở đầu hoặc background video."
+        }
+      ]
+    },
+    {
+      "repo_id": "remotion-dev/tone-js-example",
+      "url": "https://github.com/remotion-dev/tone-js-example",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 41,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Demo tạo một bài nhạc nhỏ với Tone.js trong project Remotion; ghép âm thanh và hình theo cùng timeline render."
+        }
+      ]
+    },
+    {
+      "repo_id": "RenderComp/free-remotion-templates",
+      "url": "https://github.com/RenderComp/free-remotion-templates",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 48,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Kho 50 template MIT cho Remotion, mỗi mẫu là file TSX có props mặc định; mở studio để xem/chỉnh rồi render từng composition."
+        }
+      ]
+    },
+    {
+      "repo_id": "resemble-ai/chatterbox",
+      "url": "https://github.com/resemble-ai/chatterbox",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 69,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**Chatterbox** — https://github.com/resemble-ai/chatterbox"
+        }
+      ]
+    },
+    {
+      "repo_id": "rhasspy/piper",
+      "url": "https://github.com/rhasspy/piper",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 63,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**Piper** — https://github.com/rhasspy/piper"
+        }
+      ]
+    },
+    {
+      "repo_id": "ricedust/p5-inkweaver",
+      "url": "https://github.com/ricedust/p5-inkweaver",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 98,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Tool tạo line art bằng p5.js; particle đi theo flow field và tích lũy nét để sinh bố cục kiểu mực/organic."
+        }
+      ]
+    },
+    {
+      "repo_id": "rive-app/rive-wasm",
+      "url": "https://github.com/rive-app/rive-wasm",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 44,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Rive (rive-wasm)** — https://github.com/rive-app/rive-wasm"
+        }
+      ]
+    },
+    {
+      "repo_id": "rohit-sagar256/noise-wave-flow",
+      "url": "https://github.com/rohit-sagar256/noise-wave-flow",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 130,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Canvas animation trường noise với hiệu ứng gió theo cursor; có React hook để gắn vào UI, còn cách vẽ cốt lõi framework-agnostic."
+        }
+      ]
+    },
+    {
+      "repo_id": "Rudrabha/Wav2Lip",
+      "url": "https://github.com/Rudrabha/Wav2Lip",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 61,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Nhận video/ảnh mặt và audio mới, crop vùng mặt theo frame rồi mô hình sinh lại phần miệng để khớp lời. CLI xuất MP4; không tự viết hoặc tổng hợp câu thoại."
+        }
+      ]
+    },
+    {
+      "repo_id": "RVC-Boss/GPT-SoVITS",
+      "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 70,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**GPT-SoVITS** — https://github.com/RVC-Boss/GPT-SoVITS"
+        }
+      ]
+    },
+    {
+      "repo_id": "RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+      "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 71,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**RVC (Retrieval-based Voice Conversion WebUI)** — https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI"
+        }
+      ]
+    },
+    {
+      "repo_id": "s-soltys/LipSync",
+      "url": "https://github.com/s-soltys/LipSync",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 43,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "TypeScript/Three.js chia audio thành cửa sổ ngắn, trích hệ số LPC rồi neural net phân lớp thành viseme; các giá trị viseme lái morph target trên model GLB."
+        }
+      ]
+    },
+    {
+      "repo_id": "salihavcioglu/sesly",
+      "url": "https://github.com/salihavcioglu/sesly",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 92,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Local voice studio vừa clone/design voice, vừa tạo audiobook theo chapter/character và dubbing theo speaker; script được tách thành đoạn để sửa, cast voice và render/mix."
+        }
+      ]
+    },
+    {
+      "repo_id": "sambowenhughes/a-react-video-editor",
+      "url": "https://github.com/sambowenhughes/a-react-video-editor",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 53,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Nền tảng editor Next.js + Remotion; timeline UI tạo/chỉnh cấu trúc clip rồi chuyển thành composition render được. Đây là editor mẫu hơn là thư viện animation."
+        }
+      ]
+    },
+    {
+      "repo_id": "sardistic/Procedural-Pond",
+      "url": "https://github.com/sardistic/Procedural-Pond",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 107,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Ecosystem pixel-art chạy trên browser: động vật tăng trưởng, sinh sản, săn mồi và di chuyển; agent/state simulation cập nhật liên tục rồi renderer vẽ lại."
+        }
+      ]
+    },
+    {
+      "repo_id": "Saurav56295/creepy-crawly-kinematics",
+      "url": "https://github.com/Saurav56295/creepy-crawly-kinematics",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 129,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Sinh sinh vật bò tương tác bằng Canvas 2D/JavaScript; IK tính chân và thân theo mục tiêu, renderer vẽ pose mới theo frame."
+        }
+      ]
+    },
+    {
+      "repo_id": "Scenes3D/particles-flow-field",
+      "url": "https://github.com/Scenes3D/particles-flow-field",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 103,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Hệ particle 3D chạy Three.js WebGPU/TSL; compute shader cập nhật hạt theo curl noise và phản ứng vị trí chuột. Mạnh về realtime visual, cần browser hỗ trợ WebGPU."
+        }
+      ]
+    },
+    {
+      "repo_id": "shader-park/shader-park-core",
+      "url": "https://github.com/shader-park/shader-park-core",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 134,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "DSL JavaScript → shader realtime 2D/3D; thời gian đưa vào shader uniforms để sinh hình chuyển động trên GPU. Dùng để tạo visual/scene, cần ghép exporter riêng nếu cần MP4."
+        }
+      ]
+    },
+    {
+      "repo_id": "shinshin86/mesh-avatar-studio",
+      "url": "https://github.com/shinshin86/mesh-avatar-studio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 83,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**mesh-avatar-studio** — https://github.com/shinshin86/mesh-avatar-studio"
+        }
+      ]
+    },
+    {
+      "repo_id": "shshaw/Splitting",
+      "url": "https://github.com/shshaw/Splitting",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 48,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Splitting.js** — https://github.com/shshaw/Splitting"
+        }
+      ]
+    },
+    {
+      "repo_id": "simplearyan/studio-pro",
+      "url": "https://github.com/simplearyan/studio-pro",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 10,
+          "section": "A. Renderers (10) — 10 repo",
+          "summary": "**Studio Pro** — https://github.com/simplearyan/studio-pro"
+        }
+      ]
+    },
+    {
+      "repo_id": "SkyworkAI/SkyReels-A1",
+      "url": "https://github.com/SkyworkAI/SkyReels-A1",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 74,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Framework video diffusion cho portrait animation; bản audio-driven nhận reference image và driving audio để animate mặt/đầu, ngoài ra có motion/video modes trong họ SkyReels."
+        }
+      ]
+    },
+    {
+      "repo_id": "sl33pyC01E/neural-avatar-pipeline",
+      "url": "https://github.com/sl33pyC01E/neural-avatar-pipeline",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 48,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Pipeline Windows ghép PocketTTS, nhận diện emotion, tạo facial motion và body motion cho VRM trên một timeline, rồi xuất MP4. Track mặt/thân có thể phát cùng audio trong một project."
+        }
+      ]
+    },
+    {
+      "repo_id": "sparkjsdev/radix",
+      "url": "https://github.com/sparkjsdev/radix",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 25,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**Radix** — https://github.com/sparkjsdev/radix"
+        }
+      ]
+    },
+    {
+      "repo_id": "sparkjsdev/spark",
+      "url": "https://github.com/sparkjsdev/spark",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 27,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**Spark** — https://github.com/sparkjsdev/spark"
+        }
+      ]
+    },
+    {
+      "repo_id": "StefanPetrick/animartrix",
+      "url": "https://github.com/StefanPetrick/animartrix",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 126,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Bộ công thức LED animation độ phân giải cao cho Teensy/ESP32; C++ tính màu/chuyển động mỗi frame và xuất giá trị ra ma trận LED, không phải MP4."
+        }
+      ]
+    },
+    {
+      "repo_id": "stronghamjji/PersoDub",
+      "url": "https://github.com/stronghamjji/PersoDub",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 85,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "App dubbing local: nhận video, transcription, translation, voice cloning, subtitle và xuất social video. Có editor sửa từng câu, chỉ regenerate line đã đổi và chủ động fit speech vào timing."
+        }
+      ]
+    },
+    {
+      "repo_id": "sungbongju/VRM-Avatar-Bot",
+      "url": "https://github.com/sungbongju/VRM-Avatar-Bot",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 52,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Starter React/Three.js cho VRM: streaming chat, sentence-level TTS queue, auto lip-sync kiểu RMS→aa, blink/idle/breath và chế độ mic/voice/text."
+        }
+      ]
+    },
+    {
+      "repo_id": "suno-ai/bark",
+      "url": "https://github.com/suno-ai/bark",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 74,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**Bark** — https://github.com/suno-ai/bark"
+        }
+      ]
+    },
+    {
+      "repo_id": "svgdotjs/svg.js",
+      "url": "https://github.com/svgdotjs/svg.js",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 53,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**SVG.js** — https://github.com/svgdotjs/svg.js"
+        }
+      ]
+    },
+    {
+      "repo_id": "SWivid/F5-TTS",
+      "url": "https://github.com/SWivid/F5-TTS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 68,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**F5-TTS** — https://github.com/SWivid/F5-TTS"
+        }
+      ]
+    },
+    {
+      "repo_id": "synfig/synfig",
+      "url": "https://github.com/synfig/synfig",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 22,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Trình dựng hoạt hình vector/bitmap. Người làm đặt keyframe cho thuộc tính layer; engine nội suy giữa key để tạo chuyển động. Có bone/skeleton cho rig 2D và hỗ trợ tái sử dụng dữ liệu hình, màu, chuyển động."
+        }
+      ]
+    },
+    {
+      "repo_id": "t3knobox/klik-anim-skill-creation",
+      "url": "https://github.com/t3knobox/klik-anim-skill-creation",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 89,
+          "section": "F. Repo Claude Code làm video (nghiên cứu riêng 06/11, đã clone + chạy thử what-if-animation)",
+          "summary": "**klik-anim-skill-creation** (t3knobox) — https://github.com/t3knobox/klik-anim-skill-creation — klik-anim / klik-cam / klik-remotion-method"
+        }
+      ]
+    },
+    {
+      "repo_id": "tahoma2d/tahoma2d",
+      "url": "https://github.com/tahoma2d/tahoma2d",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 24,
+          "section": "A. Công cụ 2D và đồng bộ miệng (11)",
+          "summary": "Nhánh phần mềm dựa trên Toonz/OpenToonz, bổ sung workflow 2D và stop-motion. Plastic tool tạo lưới biến dạng, rồi đặt keyframe cho các điểm để làm cutout/deformation."
+        }
+      ]
+    },
+    {
+      "repo_id": "TaoLiveAIGC/TBDub",
+      "url": "https://github.com/TaoLiveAIGC/TBDub",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 71,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Visual dubbing cho video có sẵn: detect/crop/align mặt 512×512, encode latent chuyển động, dùng audio mới sinh latent đã đồng bộ rồi ghép lại vào video gốc. Tài liệu nhấn mạnh giữ appearance, motion và background."
+        }
+      ]
+    },
+    {
+      "repo_id": "theatre-js/theatre",
+      "url": "https://github.com/theatre-js/theatre",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 29,
+          "section": "B. 3D WebGL/WebGPU (9) — 9 repo",
+          "summary": "**Theatre.js** — https://github.com/theatre-js/theatre"
+        }
+      ]
+    },
+    {
+      "repo_id": "Thedurancode/locomotion-templates",
+      "url": "https://github.com/Thedurancode/locomotion-templates",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 47,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Bộ template Remotion độc lập (data viz, text, intro, SaaS/property tour); mỗi template là composition có props, thay nội dung rồi render."
+        }
+      ]
+    },
+    {
+      "repo_id": "thinhlpg/vixtts-demo",
+      "url": "https://github.com/thinhlpg/vixtts-demo",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 10,
+          "section": "",
+          "summary": "Demo voice cloning tiếng Việt dựa trên XTTS fine-tune; cần runtime/dependencies và weights tương ứng."
+        }
+      ]
+    },
+    {
+      "repo_id": "TIGER-AI-Lab/TheoremExplainAgent",
+      "url": "https://github.com/TIGER-AI-Lab/TheoremExplainAgent",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 69,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Repo nghiên cứu giải thích định lý bằng video đa phương thức; kết hợp xử lý theorem/agent với scene Manim để biến giải thích thành hoạt họa."
+        }
+      ]
+    },
+    {
+      "repo_id": "timoncool/dub-studio",
+      "url": "https://github.com/timoncool/dub-studio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 86,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Windows app Rust/C++/CUDA cho dubbing/voice clone/subtitle và OCR chữ trên video; có tách vocal, diarization, dịch, TTS, editor và render. Cho phép chọn track gốc/dub/voiceover và burn-in captions."
+        }
+      ]
+    },
+    {
+      "repo_id": "TMElyralab/MuseTalk",
+      "url": "https://github.com/TMElyralab/MuseTalk",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 63,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Nhận ảnh/video mặt và audio; mã hóa audio bằng Whisper-tiny, mã hóa vùng mặt vào latent, rồi UNet inpaint phần mặt theo audio để xuất frame. Tài liệu nêu chạy 30fps+ trên V100 cho cấu hình của họ."
+        }
+      ]
+    },
+    {
+      "repo_id": "tsparticles/tsparticles",
+      "url": "https://github.com/tsparticles/tsparticles",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 56,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**tsParticles** — https://github.com/tsparticles/tsparticles"
+        }
+      ]
+    },
+    {
+      "repo_id": "vega/vega-lite",
+      "url": "https://github.com/vega/vega-lite",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 49,
+          "section": "D. 2D motion / physics / canvas (16) — 16 repo",
+          "summary": "**Vega-Lite** — https://github.com/vega/vega-lite"
+        }
+      ]
+    },
+    {
+      "repo_id": "VinAIResearch/PhoWhisper",
+      "url": "https://github.com/VinAIResearch/PhoWhisper",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 11,
+          "section": "",
+          "summary": "Nhận dạng tiếng nói tiếng Việt thành văn bản bằng các checkpoint PhoWhisper. Đây là ASR, không tổng hợp giọng nói."
+        }
+      ]
+    },
+    {
+      "repo_id": "vivek3141/dl-visualization",
+      "url": "https://github.com/vivek3141/dl-visualization",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 76,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Source animation cho series “Visualizing Deep Learning”; scene Manim mô tả mạng/thuật toán theo nhịp giải thích."
+        }
+      ]
+    },
+    {
+      "repo_id": "VivianMenard/boids",
+      "url": "https://github.com/VivianMenard/boids",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 125,
+          "section": "D. Blender, procedural 3D và chuyển động nhân vật (19)",
+          "summary": "Mô phỏng flocking 3D realtime trong Unity; mỗi agent áp dụng quy tắc tách/đồng hướng/kết đàn rồi graphics vẽ chuyển động nhóm."
+        }
+      ]
+    },
+    {
+      "repo_id": "vlapky/three-vrm-lip-sync",
+      "url": "https://github.com/vlapky/three-vrm-lip-sync",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 42,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Nhận audio file, AudioBuffer, mic hoặc MediaStream; AudioWorklet tính đặc trưng MFCC và phân loại âm vowel, sau đó đặt năm VRM expressions aa/ih/ou/ee/oh. Không cần ASR."
+        }
+      ]
+    },
+    {
+      "repo_id": "vrm-c/UniVRM",
+      "url": "https://github.com/vrm-c/UniVRM",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 39,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Bộ Unity đọc/ghi VRM 0.x/1.0, glTF/GLB và VRMA ở editor lẫn runtime. App Unity có thể load avatar, phát clip/VRMA và nối script của mình vào expression/blendshape."
+        }
+      ]
+    },
+    {
+      "repo_id": "vuhai2002/vietnamese-tts-studio",
+      "url": "https://github.com/vuhai2002/vietnamese-tts-studio",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 13,
+          "section": "",
+          "summary": "Ứng dụng TTS/voice cloning local có CLI/UI, README mô tả chạy trên NVIDIA GPU với các model mà dự án hỗ trợ."
+        }
+      ]
+    },
+    {
+      "repo_id": "w-okada/voice-changer",
+      "url": "https://github.com/w-okada/voice-changer",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 75,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**w-okada voice-changer (VCClient)** — https://github.com/w-okada/voice-changer"
+        }
+      ]
+    },
+    {
+      "repo_id": "wazabaki/isometric-spider",
+      "url": "https://github.com/wazabaki/isometric-spider",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 106,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Nhện isometric đi theo cursor; JavaScript tính vị trí chân bằng 2-bone inverse kinematics rồi canvas vẽ mỗi frame. Demo procedural character motion nhỏ, dễ đọc."
+        }
+      ]
+    },
+    {
+      "repo_id": "WilsonsPage/driftfield",
+      "url": "https://github.com/WilsonsPage/driftfield",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 99,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Thư viện/CLI và browser playground cho tranh flow-field xác định theo seed; seed giống nhau cho kết quả giống nhau, dễ làm series/biến thể."
+        }
+      ]
+    },
+    {
+      "repo_id": "xanguera/aicompanion",
+      "url": "https://github.com/xanguera/aicompanion",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 50,
+          "section": "B. Rig, avatar và animation 3D có tiếng nói (16)",
+          "summary": "Pipeline voice tương tác dùng Whisper local nhận mic, Kokoro TTS phát từng câu và TalkingHead/Three.js animate avatar theo audio/timestamp. Câu tiếp theo được tổng hợp song song lúc câu trước đang phát."
+        }
+      ]
+    },
+    {
+      "repo_id": "yongkyuns/noon",
+      "url": "https://github.com/yongkyuns/noon",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 80,
+          "section": "B. Manim, toán học và video giải thích (21)",
+          "summary": "Engine 2D lấy cảm hứng Manim: Python/Rust author scene → semantic scene model → compile → đánh giá frame xác định → render WGPU; hỗ trợ seek/rewind."
+        }
+      ]
+    },
+    {
+      "repo_id": "yurigo/p5.js-sketches",
+      "url": "https://github.com/yurigo/p5.js-sketches",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 91,
+          "section": "C. Creative coding, generative art và animation tương tác (25)",
+          "summary": "Bộ bài/sketch p5.js như Bezier, particle, double pendulum, noise field và bouncing balls; mỗi thư mục là ví dụ chạy trong browser bằng vòng `draw()`."
+        }
+      ]
+    },
+    {
+      "repo_id": "zast57/ZastTranslate",
+      "url": "https://github.com/zast57/ZastTranslate",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 94,
+          "section": "D. Lồng tiếng, voiceover và dựng track lời thoại (13)",
+          "summary": "Video/local audio/URL → WhisperX word alignment → dịch/voice clone → subtitle và video. Có batch tạo Shorts 9:16 với karaoke captions, nhiều ngôn ngữ và metadata."
+        }
+      ]
+    },
+    {
+      "repo_id": "Zejun-Yang/AniPortrait",
+      "url": "https://github.com/Zejun-Yang/AniPortrait",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+          "line": 66,
+          "section": "C. Audio-driven portrait và visual dubbing (16)",
+          "summary": "Từ chân dung và audio, audio2pose/audio2mesh tạo chuyển động mặt/pose, sau đó pipeline diffusion sinh video. Hỗ trợ cả face reenactment từ video điều khiển."
+        }
+      ]
+    },
+    {
+      "repo_id": "zeroweight-ai/ZeroTTS",
+      "url": "https://github.com/zeroweight-ai/ZeroTTS",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "vietnamese-voice-research-2026-11-06.md",
+          "line": 8,
+          "section": "",
+          "summary": "TTS tiếng Việt dùng ONNX, có luồng streaming; tài liệu mô tả reference voice/latents và giọng mẫu. Cần đọc kỹ quá trình tạo voice latents và quyền truy cập model trước khi hứa chạy hoàn toàn offline."
+        }
+      ]
+    },
+    {
+      "repo_id": "Zyphra/Zonos",
+      "url": "https://github.com/Zyphra/Zonos",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "all-repos-researched-2026-11-06.md",
+          "line": 76,
+          "section": "E. Voice / audio / SFX / script-to-video (22) — 22 repo",
+          "summary": "**Zonos** — https://github.com/Zyphra/Zonos"
+        }
+      ]
+    },
+    {
+      "repo_id": "zz41354899/SwiftClip",
+      "url": "https://github.com/zz41354899/SwiftClip",
+      "integration_status": "cataloged",
+      "evidence": [
+        {
+          "source": "repo-animation-research-additions-2026-11-06.md",
+          "line": 49,
+          "section": "A. Video và motion graphics bằng code — Remotion ecosystem (35)",
+          "summary": "Template production-ready và workflow storyboard cho Claude Code; agent tạo/chỉnh cấu trúc shot, Remotion components lo layout, motion và render."
+        }
+      ]
+    }
+  ],
+  "unresolved_names": [
+    {
+      "name": "Rough.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 46,
+      "section": "D. 2D motion / physics / canvas (16) — 16 repo"
+    },
+    {
+      "name": "Beatsheet",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 96,
+      "section": "G. Repo khác trong đợt 50 (không nằm trong deep-dive)"
+    },
+    {
+      "name": "Remotion",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 100,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Manim Community",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 101,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Motion Canvas / Revideo",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 102,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "HyperFrames (đã tính ở mục A)",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 103,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "GSAP",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 104,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Anime.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 105,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Three.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 106,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Lottie",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 107,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "p5.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 108,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Paper.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 109,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "PixiJS",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 110,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Matter.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 111,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Tone.js",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 112,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Rapier",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 113,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "cannon-es",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 114,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "stickman-video-director (kaomei)",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 115,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Storyboarder",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 116,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Flubber",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 117,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Swerchok",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 118,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Effekseer",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 119,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "twigl",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 120,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Pedalboard",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 121,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "OBS Studio",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 122,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Shotcut",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 123,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "FFmpeg",
+      "source": "all-repos-researched-2026-11-06.md",
+      "line": 124,
+      "section": "H. Tool / thư viện đợt đầu (01–02/11, nghiên cứu qua web + tài liệu, không phải lúc nào cũng là repo GitHub)"
+    },
+    {
+      "name": "Rất sát:",
+      "source": "repo-animation-research-additions-2026-11-06.md",
+      "line": 11,
+      "section": "Cách đọc nhãn"
+    },
+    {
+      "name": "Sát:",
+      "source": "repo-animation-research-additions-2026-11-06.md",
+      "line": 12,
+      "section": "Cách đọc nhãn"
+    },
+    {
+      "name": "Liên quan:",
+      "source": "repo-animation-research-additions-2026-11-06.md",
+      "line": 13,
+      "section": "Cách đọc nhãn"
+    },
+    {
+      "name": "Hỗ trợ:",
+      "source": "repo-animation-research-additions-2026-11-06.md",
+      "line": 14,
+      "section": "Cách đọc nhãn"
+    },
+    {
+      "name": "2D authoring và mouth cue:",
+      "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+      "line": 12,
+      "section": "Cách phân nhóm"
+    },
+    {
+      "name": "3D rig/avatar:",
+      "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+      "line": 13,
+      "section": "Cách phân nhóm"
+    },
+    {
+      "name": "Audio-driven portrait video:",
+      "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+      "line": 14,
+      "section": "Cách phân nhóm"
+    },
+    {
+      "name": "Lồng tiếng và hậu kỳ lời thoại:",
+      "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+      "line": 15,
+      "section": "Cách phân nhóm"
+    },
+    {
+      "name": "Hỗ trợ:",
+      "source": "research-2d-3d-voiceover-repos-2026-11-06.md",
+      "line": 16,
+      "section": "Cách phân nhóm"
+    }
+  ]
+}

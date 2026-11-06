@@ -1,0 +1,39 @@
+name: Core checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install core
+        run: python -m pip install -c requirements-constraints.txt -e ".[dev]"
+      - name: Python checks
+        run: |
+          python -m ruff check packages services scripts tests
+          python -m ruff format --check packages services scripts tests
+          python -m pytest -q
+      - name: Rebuild TypeScript contracts
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run contracts:generate
+          git diff --exit-code -- packages/contracts/generated
