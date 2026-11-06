@@ -20,12 +20,20 @@ Tách branch/worktree; không sửa file người khác đang làm. Root `packag
 - Sequences/scenes/shots hiện được nối tuần tự; chưa có transition/overlap hoặc media playback.
 - `POST /api/v1/projects` nhận `{ "project": ProjectSpec }`; `GET` trả project kèm `revision`.
 - `PUT /api/v1/projects/{id}` nhận `{ "project": ProjectSpec, "expected_revision": number }`; revision cũ trả 409.
-- `POST /api/v1/projects/{id}/jobs` nhận `{ "operation": "project.validate", "expected_revision": number }`; nhận job ID để theo dõi.
+- `POST /api/v1/projects/{id}/jobs` nhận `{ "operation": "project.validate", "expected_revision": number }` hoặc job Blender `{ "operation": "render.shot.blender", "expected_revision": number, "shot_id": UUID, "frame_start": number, "frame_end_exclusive": number }`; nhận job ID để theo dõi.
 - `POST /api/v1/projects/{id}/assets` nhận multipart `file`, `kind` và `expected_revision`; mặc định tối đa 100 MiB/file. `GET /api/v1/projects/{id}/assets/{asset_id}` trả file với bearer header.
 - `GET /api/v1/projects/{id}/events` là SSE, hỗ trợ `Last-Event-ID` hoặc `after_id`; dùng streaming `fetch` gửi bearer header vì `EventSource` của browser không cho set header tùy ý.
 - `GET /api/v1/catalog/repos` trả catalog và danh sách tên chưa có URL. Mọi repo trong đó có trạng thái `cataloged`.
 
-Contract đang ở **bản v1 khởi đầu**, chưa tuyên bố ổn định vĩnh viễn. Không giả lập render/TTS thành công; hiển thị nhãn chưa sẵn sàng. API chưa có timeline playback hoặc engine adapters.
+Contract đang ở **bản v1 khởi đầu**, chưa tuyên bố ổn định vĩnh viễn. Adapter Blender primitive có trạng thái `experimental`, thiếu binary trả lỗi rõ ràng; không giả lập render/TTS thành công. API chưa có timeline playback hay audio adapter.
+
+## Handoff renderer 3D cho Gemini UI
+
+- Scene mẫu: `fixtures/blender-primitive-project/project.json`; cấu trúc scene ở `shot.extensions['animeflow.blender.scene.v1']`. Keyframe là số frame cục bộ của shot.
+- `GET /api/v1/adapters/blender` (bearer) trả `status: binary_detected | missing_binary` và `probe: executable_path_only`. Việc thấy binary chưa chứng minh render chạy được; UI hiển thị trạng thái này trước khi bật nút render.
+- Job render dùng range nửa mở `[frame_start, frame_end_exclusive)`, tùy chọn bỏ `frame_end_exclusive` để render cả shot. `GET /api/v1/jobs/{job_id}` trả trạng thái và `result` theo `RenderResult` khi thành công; `GET /api/v1/jobs/{job_id}/frames/{index}` trả `image/png` có bearer. Lỗi render nằm ở `job.error.code`, ví dụ `blender_missing`, `invalid_scene`, `blender_failed`, `render_timeout`.
+- UI không dùng `frames[].path` làm file URL trực tiếp; đó là đường dẫn lưu trữ tương đối. Dùng endpoint frame có xác thực. Trong browser, lấy blob bằng `fetch` với bearer rồi tạo object URL, thu hồi URL khi đổi frame.
+- Không coi adapter `experimental` là video hoàn chỉnh. Hiện chưa có mux tiếng Việt, compositor hoặc 2D renderer. Bằng chứng/caveat ở `docs/research/blender-render-verified-2026-11-06.md`.
 
 ## Ticket cho Gemini: AF-UI-01
 
@@ -44,12 +52,15 @@ API errors và revision conflicts được hiển thị; ghi cách chạy và gi
 
 ~~~text
 Owner: Gemini
-Đầu vào: docs/research/sources/vietnamese-voice-research-2026-11-06.md và VoiceLine.
-Khảo sát VieNeu-TTS trước: pin version/model, kiểm tra code/model/voice license,
-Windows CPU/GPU, kích thước và quyền tải weights, rồi chạy một câu tiếng Việt.
-Đề xuất adapter nhận text/language/voice, trả WAV, sample rate, duration, hash,
-provenance và consent reference. Alignment/lip-sync là công đoạn riêng.
-Giao báo cáo lỗi, lệnh tái lập, ví dụ audio nếu có quyền, và PR adapter độc lập.
+Đầu vào: docs/research/vietnamese-voice-verified-2026-11-06.md và VoiceLine.
+Làm VieNeu v3 Turbo trước trong adapters/audio/**: pin SDK/model revision,
+kiểm quyền code/weights/preset/reference; smoke test Windows CPU bằng câu Việt.
+Adapter nhận text gốc, spoken text/normalizer mode, engine/voice, seed,
+trả WAV mono, native/target sample rates, sample counts, SHA-256 của từng bản,
+model/voice provenance và consent reference. Không giả định duration_frames bằng
+thời lượng audio; báo overflow slot. Alignment/lip-sync là công đoạn riêng.
+Giao lệnh tái lập, WAV ví dụ nếu có quyền, kết quả nghe/kiểm transcript, mã lỗi,
+license và PR adapter độc lập. Không ghi model/clip giọng vào Git.
 Không commit model weights hoặc voice/reference media chưa được phép.
 ~~~
 

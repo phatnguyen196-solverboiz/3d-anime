@@ -1,0 +1,22 @@
+{
+  "id": "animeflow.blender.primitives",
+  "version": "0.1.0",
+  "contract_version": "1.0.0",
+  "status": "experimental",
+  "capabilities": ["render.frames", "physics.rigid_body"],
+  "supported_os": ["windows", "macos", "linux"],
+  "runtime": "Blender 4.3+ with Cycles CPU; external executable required",
+  "network": "none",
+  "determinism": "seeded",
+  "license": {
+    "code": "GPL-2.0-or-later (Blender runtime); AnimeFlow adapter license pending",
+    "models": "not_applicable",
+    "review_status": "reviewed"
+  },
+  "requirements": {
+    "executable_env": "ANIMEFLOW_BLENDER_BIN",
+    "outputs": ["image/png"],
+    "scene_extension": "animeflow.blender.scene.v1"
+  },
+  "documentation_url": "https://docs.blender.org/manual/en/latest/advanced/command_line/render.html"
+}

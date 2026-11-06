@@ -9,7 +9,7 @@
     "job_id": {"type": "string", "format": "uuid"},
     "project_id": {"type": "string", "format": "uuid"},
     "project_revision": {"type": "integer", "minimum": 1},
-    "operation": {"const": "project.validate"},
+    "operation": {"enum": ["project.validate", "render.shot.blender"]},
     "state": {"enum": ["queued", "running", "cancel_requested", "cancelled", "succeeded", "failed"]},
     "created_at": {"type": "string", "format": "date-time"},
     "started_at": {"type": ["string", "null"], "format": "date-time"},

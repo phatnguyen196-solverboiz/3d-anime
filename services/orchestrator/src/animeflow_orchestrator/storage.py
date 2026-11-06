@@ -214,7 +214,13 @@ class Storage:
             )
         return self.get_project(project_id)
 
-    def enqueue(self, project_id: str, expected_revision: int, operation: str) -> dict[str, Any]:
+    def enqueue(
+        self,
+        project_id: str,
+        expected_revision: int,
+        operation: str,
+        params: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
         job_id = str(uuid4())
         timestamp = now()
         with self.transaction() as db:
@@ -225,12 +231,17 @@ class Storage:
                 raise Conflict(
                     f"Expected revision {expected_revision}; current revision is {row['revision']}."
                 )
+            snapshot = (
+                encode({"project": json.loads(row["spec_json"]), "params": params})
+                if params is not None
+                else row["spec_json"]
+            )
             db.execute(
                 """INSERT INTO jobs(
                        job_id, project_id, project_revision, operation, state,
                        input_json, created_at)
                    VALUES (?, ?, ?, ?, 'queued', ?, ?)""",
-                (job_id, project_id, row["revision"], operation, row["spec_json"], timestamp),
+                (job_id, project_id, row["revision"], operation, snapshot, timestamp),
             )
             self._event(
                 db, project_id, "job.queued", {"job_id": job_id, "revision": row["revision"]}

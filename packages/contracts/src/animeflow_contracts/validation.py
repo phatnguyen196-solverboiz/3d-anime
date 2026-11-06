@@ -7,7 +7,7 @@ from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-SCHEMAS = frozenset({"project", "job", "artifact", "adapter-manifest"})
+SCHEMAS = frozenset({"project", "job", "artifact", "adapter-manifest", "render-result"})
 
 
 @lru_cache
