@@ -11,6 +11,8 @@ from pathlib import Path, PurePosixPath
 from typing import Annotated, Any, Literal
 from uuid import UUID, uuid4
 
+from animeflow_blender import RenderError
+from animeflow_blender.runner import blender_executable, validate_render_request
 from animeflow_catalog import load_catalog
 from animeflow_orchestrator.storage import Conflict, NotFound, Storage
 from animeflow_orchestrator.worker import Worker
@@ -43,8 +45,11 @@ class UpdateProject(CreateProject):
 
 class CreateJob(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    operation: Literal["project.validate"]
+    operation: Literal["project.validate", "render.shot.blender"]
     expected_revision: int = Field(ge=1)
+    shot_id: UUID | None = None
+    frame_start: int = Field(default=0, ge=0)
+    frame_end_exclusive: int | None = Field(default=None, ge=1)
 
 
 def create_app(
@@ -133,6 +138,16 @@ def create_app(
     @app.get("/api/v1/health", tags=["system"])
     def health() -> dict[str, str]:
         return {"status": "ok", "project_schema_version": "1.0.0"}
+
+    @app.get("/api/v1/adapters/blender", dependencies=[Depends(require_auth)], tags=["adapters"])
+    def blender_health() -> dict[str, Any]:
+        return {
+            "id": "animeflow.blender.primitives",
+            "status": "binary_detected" if blender_executable() else "missing_binary",
+            "probe": "executable_path_only",
+            "scene_extension": "animeflow.blender.scene.v1",
+            "capabilities": ["render.frames", "physics.rigid_body"],
+        }
 
     @app.get("/api/v1/catalog/repos", dependencies=[Depends(require_auth)], tags=["catalog"])
     def catalog() -> dict[str, Any]:
@@ -263,13 +278,61 @@ def create_app(
         tags=["jobs"],
     )
     def create_job(project_id: UUID, body: CreateJob) -> dict[str, Any]:
-        job = storage.enqueue(str(project_id), body.expected_revision, body.operation)
+        params = None
+        if body.operation == "render.shot.blender":
+            if body.shot_id is None:
+                raise HTTPException(status_code=422, detail={"code": "shot_id_required"})
+            saved = storage.get_project(str(project_id))
+            if saved["revision"] != body.expected_revision:
+                raise Conflict("Project revision changed before render submission.")
+            try:
+                validate_render_request(
+                    saved["project"],
+                    str(body.shot_id),
+                    body.frame_start,
+                    body.frame_end_exclusive,
+                )
+            except RenderError as exc:
+                raise HTTPException(
+                    status_code=422, detail={"code": exc.code, "message": str(exc)}
+                ) from exc
+            params = {
+                "shot_id": str(body.shot_id),
+                "frame_start": body.frame_start,
+                "frame_end_exclusive": body.frame_end_exclusive,
+            }
+        elif (
+            body.shot_id is not None
+            or body.frame_start != 0
+            or body.frame_end_exclusive is not None
+        ):
+            raise HTTPException(status_code=422, detail={"code": "unexpected_render_fields"})
+        job = storage.enqueue(str(project_id), body.expected_revision, body.operation, params)
         worker.notify()
         return job
 
     @app.get("/api/v1/jobs/{job_id}", dependencies=[Depends(require_auth)], tags=["jobs"])
     def get_job(job_id: UUID) -> dict[str, Any]:
         return storage.get_job(str(job_id))
+
+    @app.get(
+        "/api/v1/jobs/{job_id}/frames/{frame_index}",
+        dependencies=[Depends(require_auth)],
+        tags=["jobs"],
+    )
+    def get_rendered_frame(job_id: UUID, frame_index: int) -> FileResponse:
+        job = storage.get_job(str(job_id))
+        if job["state"] != "succeeded" or job["operation"] != "render.shot.blender":
+            raise NotFound("Rendered frame is not available.")
+        frame = next(
+            (item for item in job["result"]["frames"] if item["index"] == frame_index), None
+        )
+        if frame is None:
+            raise NotFound("Rendered frame not found.")
+        path = (storage.directory / frame["path"]).resolve()
+        if not path.is_relative_to(storage.directory) or not path.is_file():
+            raise NotFound("Rendered frame file not found.")
+        return FileResponse(path, media_type="image/png")
 
     @app.post("/api/v1/jobs/{job_id}/cancel", dependencies=[Depends(require_auth)], tags=["jobs"])
     def cancel_job(job_id: UUID) -> dict[str, Any]:

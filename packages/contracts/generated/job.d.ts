@@ -4,7 +4,7 @@ export interface Job {
   job_id: string;
   project_id: string;
   project_revision: number;
-  operation: "project.validate";
+  operation: "project.validate" | "render.shot.blender";
   state: "queued" | "running" | "cancel_requested" | "cancelled" | "succeeded" | "failed";
   created_at: string;
   started_at: string | null;

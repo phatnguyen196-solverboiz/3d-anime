@@ -9,9 +9,10 @@ Nền tảng local-first cho quy trình sản xuất video 2D/3D, hoạt hình b
 - API local có bearer token, project lưu trong SQLite, revision chống ghi đè và validation các liên kết.
 - Import/download asset theo project, băm SHA-256, giới hạn kích thước và kiểm tra file thiếu.
 - Worker một tiến trình, job validation chạy nền với snapshot, hủy job, phục hồi sau khi dừng và event stream.
+- Adapter Blender **experimental**: scene primitive/keyframe/rigid body dạng JSON có schema; job xuất PNG từng frame, kiểm kích thước, số frame và SHA-256, trả manifest qua API. Cần Blender executable riêng.
 - Catalog có nguồn dẫn đến các báo cáo repo; nhóm ứng viên giọng tiếng Việt được ghi riêng.
 
-Hiện **chưa có** studio UI, renderer 2D/3D, TTS, lip-sync, compositor hoặc xuất video. Repo nghiên cứu trong catalog chưa được tích hợp chỉ vì được liệt kê. Các phần đó có trong roadmap và sẽ được giao theo [hướng dẫn teamwork](docs/teamwork-vi.md).
+Hiện **chưa có** studio UI, renderer 2D, TTS, lip-sync, compositor hoặc xuất video hoàn chỉnh. Blender adapter mới ở mức thử nghiệm và chưa chạy render thật trên máy phát triển này; các repo khác trong catalog chưa được tích hợp chỉ vì được liệt kê. Các phần đó có trong roadmap và [hướng dẫn teamwork](docs/teamwork-vi.md).
 
 ## Chạy local trên Windows
 
@@ -47,12 +48,29 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8765/api/v1/projects -Heade
 
 API docs: `http://127.0.0.1:8765/docs`. Tất cả endpoint dữ liệu cần header `Authorization: Bearer <token>`; health check công khai trên loopback. CORS cho localhost port 5173, cấu hình qua `ANIMEFLOW_CORS_ORIGINS` nếu cần.
 
+## Render shot 3D bằng Blender
+
+Cài Blender 4.5 LTS trên máy riêng và đặt đường dẫn binary trước khi chạy API. Worker chạy Blender ở chế độ background/offline, Cycles CPU. `GET /api/v1/adapters/blender` chỉ kiểm tra đường dẫn binary (`binary_detected` hoặc `missing_binary`); nếu thiếu, render job trả lỗi `blender_missing`.
+
+~~~powershell
+$env:ANIMEFLOW_BLENDER_BIN = 'C:\Program Files\Blender Foundation\Blender 4.5\blender.exe'
+$project = Get-Content -Raw -Encoding utf8 fixtures/blender-primitive-project/project.json | ConvertFrom-Json
+$headers = @{ Authorization = "Bearer $env:ANIMEFLOW_API_TOKEN" }
+$body = @{ project = $project } | ConvertTo-Json -Depth 40
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8765/api/v1/projects -Headers $headers -ContentType 'application/json; charset=utf-8' -Body ([Text.Encoding]::UTF8.GetBytes($body))
+$jobBody = @{ operation = 'render.shot.blender'; expected_revision = 1; shot_id = '2673bbee-bcbc-4591-8bc6-795fc5463c17'; frame_start = 0; frame_end_exclusive = 3 } | ConvertTo-Json
+$job = Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:8765/api/v1/projects/ea07e191-d192-41d1-ae43-34b78e2e7447/jobs' -Headers $headers -ContentType 'application/json' -Body $jobBody
+Invoke-RestMethod -Uri "http://127.0.0.1:8765/api/v1/jobs/$($job.job_id)" -Headers $headers
+~~~
+
+Job thành công trả `render-result` gồm `frames[].index/path/sha256/width/height`; tải một ảnh qua `GET /api/v1/jobs/{job_id}/frames/{frame_index}` với bearer token. Range dùng `[frame_start, frame_end_exclusive)`, tính theo shot. Scene đặt ở `shot.extensions['animeflow.blender.scene.v1']`; chỉ hỗ trợ primitive, material, keyframe transform và rigid body đơn giản. Chi tiết và giới hạn ở [nghiên cứu Blender](docs/research/blender-render-verified-2026-11-06.md).
+
 ## Kiểm tra và tái sinh catalog
 
 ~~~powershell
 python -m pytest -q
-python -m ruff check packages services scripts tests
-python -m ruff format --check packages services scripts tests
+python -m ruff check adapters packages services scripts tests
+python -m ruff format --check adapters packages services scripts tests
 python scripts/build_research_catalog.py
 npm run contracts:generate
 ~~~
@@ -64,6 +82,7 @@ Thư mục `docs/research/sources/` chứa các báo cáo làm nguồn; `package
 - [Kế hoạch, design system và kiến trúc](docs/animeflow-blueprint-vi.md)
 - [Teamwork, API contract và ticket giao Gemini](docs/teamwork-vi.md)
 - [Các nguồn giọng tiếng Việt](docs/research/sources/vietnamese-voice-research-2026-11-06.md)
+- [Đối chiếu kỹ thuật giọng Việt và handoff Gemini](docs/research/vietnamese-voice-verified-2026-11-06.md)
 - [Project fixture](fixtures/tiny-project/project.json)
 
 Giấy phép của repo này chưa được chọn. Mỗi repo, model weights, giọng và asset bên ngoài cần kiểm tra điều kiện riêng trước khi tích hợp hoặc phân phối.

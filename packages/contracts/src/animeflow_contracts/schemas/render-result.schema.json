@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animeflow.local/schemas/render-result.schema.json",
+  "title": "RenderResult",
+  "description": "Verified PNG frame result of a single Blender shot job. Frame end is exclusive.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["adapter_id", "adapter_version", "backend_version", "project_id", "shot_id", "job_id", "frame_start", "frame_end_exclusive", "fps", "width", "height", "source_sha256", "seed", "frames", "warnings"],
+  "properties": {
+    "adapter_id": {"const": "animeflow.blender.primitives"},
+    "adapter_version": {"type": "string", "minLength": 1},
+    "backend_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "format": "uuid"},
+    "shot_id": {"type": "string", "format": "uuid"},
+    "job_id": {"type": "string", "format": "uuid"},
+    "frame_start": {"type": "integer", "minimum": 0},
+    "frame_end_exclusive": {"type": "integer", "minimum": 1},
+    "fps": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer", "minimum": 1},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "width": {"type": "integer", "minimum": 1},
+    "height": {"type": "integer", "minimum": 1},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "seed": {"type": "integer", "minimum": 0},
+    "frames": {"type": "array", "minItems": 1, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "path", "sha256", "width", "height"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0},
+        "path": {"type": "string", "pattern": "^renders/[0-9a-f-]{36}/[0-9a-f-]{36}/frames/frame_[0-9]{6,9}\\.png$"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      }
+    }},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

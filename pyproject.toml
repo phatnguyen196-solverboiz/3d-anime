@@ -18,12 +18,13 @@ dependencies = [
 dev = ["pytest>=8,<10", "httpx2>=2,<3", "ruff>=0.8,<1"]
 
 [tool.setuptools]
-packages = ["animeflow_contracts", "animeflow_catalog", "animeflow_project", "animeflow_api", "animeflow_orchestrator"]
-package-dir = {animeflow_contracts = "packages/contracts/src/animeflow_contracts", animeflow_catalog = "packages/catalog/src/animeflow_catalog", animeflow_project = "packages/project-spec/src/animeflow_project", animeflow_api = "services/api/src/animeflow_api", animeflow_orchestrator = "services/orchestrator/src/animeflow_orchestrator"}
+packages = ["animeflow_contracts", "animeflow_catalog", "animeflow_project", "animeflow_api", "animeflow_orchestrator", "animeflow_blender"]
+package-dir = {animeflow_contracts = "packages/contracts/src/animeflow_contracts", animeflow_catalog = "packages/catalog/src/animeflow_catalog", animeflow_project = "packages/project-spec/src/animeflow_project", animeflow_api = "services/api/src/animeflow_api", animeflow_orchestrator = "services/orchestrator/src/animeflow_orchestrator", animeflow_blender = "adapters/animation-3d/blender/src/animeflow_blender"}
 
 [tool.setuptools.package-data]
 animeflow_contracts = ["schemas/*.json"]
 animeflow_catalog = ["data/*.json"]
+animeflow_blender = ["scene.schema.json", "blender_scene.py"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
