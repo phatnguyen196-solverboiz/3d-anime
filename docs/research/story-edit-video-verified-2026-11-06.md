@@ -6,7 +6,7 @@ Ngày đối chiếu: 06/11/2026. Đã đọc tài liệu và các phần mã ng
 
 Nên nối ba góc nhìn trên cùng ID: **kịch bản → storyboard/shot → bản dựng**. Người viết sửa câu chuyện; người dựng xem thời lượng, hình và âm thanh; cả hai cùng tham chiếu shot/voice-line ổn định. Tránh tạo thêm một `project.timeline.scenes` song song với `ProjectSpec.sequences[].scenes[].shots[]` rồi để chúng lệch nhau.
 
-Baseline hiện chỉ có assembly nối shot tuần tự. Phần core trong nhánh này bổ sung báo cáo editorial và preview/apply ba thao tác: đảo shot trong scene, đổi thời lượng shot, sửa thoại. Chưa có player video, source-media trimming, multi-track, transition, undo history, story generator hoặc export MP4/OTIO. `impact` chỉ là danh sách cần xem xét dựng lại, chưa tự invalidate cache hay chạy job.
+Baseline hiện chỉ có assembly nối shot tuần tự. Phần core trong nhánh này bổ sung báo cáo editorial và preview/apply ba thao tác: đảo shot trong scene, đổi thời lượng shot, sửa thoại. Studio Web đã nối các thao tác này với API thật, có đối chiếu conflict và lựa chọn audio detach. Chưa có player video, source-media trimming, multi-track, transition, undo history, story generator hoặc export MP4/OTIO. `impact` chỉ là danh sách cần xem xét dựng lại, chưa tự invalidate cache hay chạy job.
 
 ## 2. Các repo/định dạng đã nghiên cứu và cách vận dụng
 
@@ -91,16 +91,18 @@ Fixture ba shot ở `fixtures/story-edit-project/project.json`; bản edit thay 
 | Ticket | Owner | Đầu ra và điều kiện hoàn tất |
 |---|---|---|
 | AF-STORY-CORE-01 | Codex, đã triển khai nhánh này | Contracts, report, preview/apply, validation/409, tests và fixture. |
-| AF-STORY-UI-01 | Gemini, cần giao sau handoff | Script/shot panel theo schema đã sinh; sửa draft → preview impact → apply; hiện 409 và giữ draft. Keyboard reorder, focus/selection theo ID, lỗi gắn đúng line/shot. |
+| AF-STORY-UI-01 | Codex, đã triển khai | Script/shot panel theo schema đã sinh; sửa draft → preview impact → apply; hiện 409, giữ draft và đối chiếu field conflicts. Keyboard/drag reorder, focus/selection theo ID, lỗi gắn đúng line/shot. |
 | AF-STORY-MODEL-02 | Codex + Gemini review | Extension beat/scene intent/continuity, manual review states, proposal Fountain import/export có loss report và ID map. |
 | AF-MEDIA-PROBE-01 | Codex | Metadata media thực, native/project sample count, source availability; trạng thái proxy/ready/missing có bằng chứng. |
 | AF-EDIT-TRACKS-02 | Codex thiết kế, Gemini UI | Placement/source range/linked tracks, J/L cut, transition handles, undo/event history. Không đưa vào ProjectSpec v1 bằng trường tùy tiện. |
 | AF-VIDEO-ASSEMBLY-01 | Codex | Compile assembly → FFmpeg job; nối frame sequence + thoại thật + subtitle; QC file encode và manifest. Chỉ gọi hoàn tất khi mở/nghe được file cuối. |
 
-Handoff Gemini: dùng đường dẫn contracts/generated và các endpoint trên, không tiếp tục tạo timeline độc lập trong UI. Phần lint nháp dựa trên `project.timeline` phải được map sang report canonical trước khi dùng. Các quy tắc như shot tĩnh >3s, cut hình/âm đồng thời, hold 1s hoặc 17 ký tự/giây cần trở thành profile advisory có nguồn/cấu hình; chúng không phải lỗi schema hay định luật dựng phim.
+Quy tắc phối hợp: UI dùng contracts/generated và các endpoint trên; không tạo timeline độc lập. Phần lint nháp dựa trên `project.timeline` phải được map sang report canonical trước khi dùng. Các quy tắc như shot tĩnh >3s, cut hình/âm đồng thời, hold 1s hoặc 17 ký tự/giây cần trở thành profile advisory có nguồn/cấu hình; chúng không phải lỗi schema hay định luật dựng phim.
 
 ## 7. Kiểm tra và giới hạn
 
 Kiểm tra unit/API bao gồm rounding sample ở 30000/1001–44.1 kHz, reorder không mất cue/ID, invalid permutation, event/voice overflow, explicit audio detach, batch atomicity, preview không ghi, no-op, authentication, conflict và một writer chen vào trước commit, cùng keyframe Blender vượt biên sau resize. Không dùng kết quả test này làm bằng chứng chất lượng video hoặc tốc độ renderer.
 
 Lệnh của repo: `python -m pytest -q`, `python -m ruff check adapters packages services scripts tests`, `python -m ruff format --check adapters packages services scripts tests`, `npm run contracts:generate`. Kết quả chạy thực tế được ghi trong PR/handoff. Chưa nghiệm thu end-to-end audio/video, transition, media probe hoặc import/export upstream.
+
+UI có thêm `npm run typecheck`, `npm run build`, `npm run test:ui`. Browser smoke trên bản production nối FastAPI/SQLite riêng đã tạo/mở sample, chặn shot rút quá ngắn, xác nhận preview không lưu, tạo tình huống concurrent update dẫn đến 409, giữ/đối chiếu draft, preview lại và lưu bản 3. Sau reload, API trả lại đúng thứ tự, thời lượng và lời đã sửa. Bố cục 430px không có tràn ngang toàn trang; timeline có vùng cuộn riêng. Đây là kiểm tra story editor, chưa phải video render/voice playback.

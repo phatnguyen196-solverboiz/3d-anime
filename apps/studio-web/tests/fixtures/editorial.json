@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "ecb857be-8a30-4dba-9d5e-e2dc3bff7913",
+  "project_revision": 1,
+  "assembly": "sequential_cuts",
+  "fps": {
+    "numerator": 24000,
+    "denominator": 1001
+  },
+  "audio_sample_rate": 48000,
+  "duration_frames": 264,
+  "duration_samples": 528528,
+  "shots": [
+    {
+      "shot_id": "28732ecf-985b-49a8-967f-44504ce852a7",
+      "scene_id": "e162ea91-bca1-4f47-9274-6791d04a596d",
+      "sequence_id": "09a4677d-1ee8-4c80-b77d-16639fbb80db",
+      "title": "Tấm vé dưới chân",
+      "description": "Toàn cảnh sân ga. Một tấm vé nằm bên chiếc ghế, Linh bước vào khung.",
+      "start_frame": 0,
+      "end_frame_exclusive": 72,
+      "duration_frames": 72,
+      "start_sample": 0,
+      "end_sample_exclusive": 144144,
+      "duration_samples": 144144,
+      "voice_line_ids": [],
+      "events": []
+    },
+    {
+      "shot_id": "b32879d2-706a-48c8-8fc9-73c9721533f5",
+      "scene_id": "e162ea91-bca1-4f47-9274-6791d04a596d",
+      "sequence_id": "09a4677d-1ee8-4c80-b77d-16639fbb80db",
+      "title": "Linh nhặt vé",
+      "description": "Cận tay nhặt vé, chuyển sự chú ý sang người đang tìm đồ phía xa.",
+      "start_frame": 72,
+      "end_frame_exclusive": 168,
+      "duration_frames": 96,
+      "start_sample": 144144,
+      "end_sample_exclusive": 336336,
+      "duration_samples": 192192,
+      "voice_line_ids": [
+        "e0ac8216-25c1-4e60-93e9-40d853be54d4"
+      ],
+      "events": [
+        {
+          "event_id": "fd19dfbd-9d0f-4e45-bdf1-e529449c3574",
+          "type": "prop.pickup",
+          "local_frame": 36,
+          "frame": 108
+        }
+      ]
+    },
+    {
+      "shot_id": "e42e0731-4996-4668-a220-e76a8316ff66",
+      "scene_id": "648579b9-4ef0-4fcb-9ba7-263491a31441",
+      "sequence_id": "09a4677d-1ee8-4c80-b77d-16639fbb80db",
+      "title": "Trả lại tấm vé",
+      "description": "Linh trả vé cho Minh. Minh thở phào, cả hai nhìn về phía tàu.",
+      "start_frame": 168,
+      "end_frame_exclusive": 264,
+      "duration_frames": 96,
+      "start_sample": 336336,
+      "end_sample_exclusive": 528528,
+      "duration_samples": 192192,
+      "voice_line_ids": [
+        "e58e1f25-a149-4f4f-a079-d6b41cf68e02"
+      ],
+      "events": [
+        {
+          "event_id": "9afc7de9-ea3b-473c-a422-484d28dd6df1",
+          "type": "gesture.wave",
+          "local_frame": 72,
+          "frame": 240
+        }
+      ]
+    }
+  ],
+  "voice_lines": [
+    {
+      "voice_line_id": "e0ac8216-25c1-4e60-93e9-40d853be54d4",
+      "shot_id": "b32879d2-706a-48c8-8fc9-73c9721533f5",
+      "character_id": "525f2ac6-5a4a-4ede-818b-28ac777ac8e7",
+      "text": "Vé của bạn phải không?",
+      "language": "vi-VN",
+      "local_start_frame": 24,
+      "audio_linked": false,
+      "start_frame": 96,
+      "end_frame_exclusive": 144,
+      "duration_frames": 48,
+      "start_sample": 192192,
+      "end_sample_exclusive": 288288,
+      "duration_samples": 96096
+    },
+    {
+      "voice_line_id": "e58e1f25-a149-4f4f-a079-d6b41cf68e02",
+      "shot_id": "e42e0731-4996-4668-a220-e76a8316ff66",
+      "character_id": "537bc7fe-5713-407b-8ab1-f857663265ea",
+      "text": "Cảm ơn bạn! Mình suýt trễ tàu.",
+      "language": "vi-VN",
+      "local_start_frame": 12,
+      "audio_linked": false,
+      "start_frame": 180,
+      "end_frame_exclusive": 252,
+      "duration_frames": 72,
+      "start_sample": 360360,
+      "end_sample_exclusive": 504504,
+      "duration_samples": 144144
+    }
+  ],
+  "warnings": [
+    {
+      "code": "voice_audio_unlinked",
+      "entity_id": "e0ac8216-25c1-4e60-93e9-40d853be54d4"
+    },
+    {
+      "code": "voice_audio_unlinked",
+      "entity_id": "e58e1f25-a149-4f4f-a079-d6b41cf68e02"
+    }
+  ]
+}

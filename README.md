@@ -7,17 +7,18 @@ Nền tảng local-first cho quy trình sản xuất video 2D/3D, hoạt hình b
 - JSON Schema cho project, artifact, job và adapter; TypeScript declarations được sinh từ schema.
 - Project mẫu với shot, sự kiện và thoại tiếng Việt; phép quy đổi frame/sample dùng số nguyên.
 - Story edit core: báo cáo timeline cut, preview/apply đảo shot, sửa thời lượng/thoại theo revision; chặn cue tràn shot và giữ rõ tác động của audio cũ.
+- Studio Web story editor tiếng Việt: sửa draft, kéo thả/bàn phím reorder, xem tác động, lưu qua API và đối chiếu conflict; token chỉ giữ trong phiên.
 - API local có bearer token, project lưu trong SQLite, revision chống ghi đè và validation các liên kết.
 - Import/download asset theo project, băm SHA-256, giới hạn kích thước và kiểm tra file thiếu.
 - Worker một tiến trình, job validation chạy nền với snapshot, hủy job, phục hồi sau khi dừng và event stream.
 - Adapter Blender **experimental**: scene primitive/keyframe/rigid body dạng JSON có schema; job xuất PNG từng frame, kiểm kích thước, số frame và SHA-256, trả manifest qua API. Cần Blender executable riêng.
 - Catalog có nguồn dẫn đến các báo cáo repo; nhóm ứng viên giọng tiếng Việt được ghi riêng.
 
-Hiện **chưa có** studio UI, renderer 2D, TTS, lip-sync, compositor hoặc xuất video hoàn chỉnh. Blender adapter mới ở mức thử nghiệm và chưa chạy render thật trên máy phát triển này; các repo khác trong catalog chưa được tích hợp chỉ vì được liệt kê. Các phần đó có trong roadmap và [hướng dẫn teamwork](docs/teamwork-vi.md).
+Studio Web hiện tập trung vào story edit, chưa có player hình/audio, renderer 2D, TTS, lip-sync, compositor hoặc xuất video hoàn chỉnh. Blender adapter mới ở mức thử nghiệm và chưa chạy render thật trên máy phát triển này; các repo khác trong catalog chưa được tích hợp chỉ vì được liệt kê. Các phần đó có trong roadmap và [hướng dẫn teamwork](docs/teamwork-vi.md).
 
 ## Chạy local trên Windows
 
-Yêu cầu Python 3.11+, Node.js và npm cho việc sinh TypeScript contracts.
+Yêu cầu Python 3.11+, Node.js 22.12+ hoặc bản LTS 24 và npm cho frontend/contracts.
 
 ~~~powershell
 python -m venv .venv
@@ -49,6 +50,14 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8765/api/v1/projects -Heade
 
 API docs: `http://127.0.0.1:8765/docs`. Tất cả endpoint dữ liệu cần header `Authorization: Bearer <token>`; health check công khai trên loopback. CORS cho localhost port 5173, cấu hình qua `ANIMEFLOW_CORS_ORIGINS` nếu cần.
 
+## Mở story editor
+
+Sau khi API chạy, mở terminal khác tại repo và chạy `npm ci --ignore-scripts` rồi `npm run dev`. Mở `http://127.0.0.1:5173`, nhập địa chỉ API và cùng token đã đặt cho backend. Chọn dự án hoặc bấm **Tạo / mở dự án mẫu**; thao tác này mở bản đã có nếu ID mẫu tồn tại, không ghi đè nó.
+
+Sửa thoại/thời lượng hoặc đổi thứ tự shot trong cảnh, bấm **Xem tác động** rồi **Lưu thay đổi**. Khi có bản lưu mới từ người khác, draft được giữ để đối chiếu và chọn nội dung cần giữ; phải preview lại trước khi lưu tiếp. Có thể đổi thứ tự bằng kéo thả, nút ↑/↓ hoặc Alt+↑/↓ trên shot; phím ↑/↓ thường chuyển selection.
+
+Token và draft chỉ giữ trong bộ nhớ tab. Trình duyệt được yêu cầu cảnh báo khi rời trang có draft chưa lưu, nhưng chưa có khôi phục draft/undo bền vững. Chi tiết chạy, kiểm tra và giới hạn ở [Studio Web README](apps/studio-web/README.md).
+
 ## Render shot 3D bằng Blender
 
 Cài Blender 4.5 LTS trên máy riêng và đặt đường dẫn binary trước khi chạy API. Worker chạy Blender ở chế độ background/offline, Cycles CPU. `GET /api/v1/adapters/blender` chỉ kiểm tra đường dẫn binary (`binary_detected` hoặc `missing_binary`); nếu thiếu, render job trả lỗi `blender_missing`.
@@ -74,6 +83,9 @@ python -m ruff check adapters packages services scripts tests
 python -m ruff format --check adapters packages services scripts tests
 python scripts/build_research_catalog.py
 npm run contracts:generate
+npm run typecheck
+npm run build
+npm run test:ui
 ~~~
 
 Thư mục `docs/research/sources/` chứa các báo cáo làm nguồn; `packages/catalog/src/animeflow_catalog/data/repos.json` là catalog có thể sinh lại. Các mục chưa có URL được giữ trong `unresolved_names`, chưa được coi là repo đã tích hợp hoặc đã xác minh.

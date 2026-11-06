@@ -68,8 +68,8 @@ Không commit model weights hoặc voice/reference media chưa được phép.
 
 ## Handoff mỗi ticket
 
-### Ticket cho Gemini: AF-STORY-UI-01
+### AF-STORY-UI-01 — đã triển khai
 
-Đầu vào: `StoryEditRequest`, `StoryEditResult`, `EditorialReport` trong contracts/generated; fixture `fixtures/story-edit-project/`. Làm script/shot editor trên ID canonical, draft → preview → apply, hiển thị impact và lỗi/409, giữ draft khi conflict. Text có audio cũ phải hiện lựa chọn detach rõ ràng; không tự cắt/stretch audio hay đánh dấu render đã xong. Cần keyboard reorder và focus/selection theo ID. Chỉ dùng global timing từ report; không tạo một `ProjectSpec.timeline` song song. Owner Gemini giữ `apps/studio-web/**` và UI packages; Codex giữ core/schema. Chưa có persistent undo/player/multi-track trong API này.
+Codex đã thực hiện cả phần UI của ticket này: `apps/studio-web/**`, dùng CSS tokens snapshot và generated contracts. Có draft → preview → apply, error mapping/409, đối chiếu field conflicts, explicit audio detach, keyboard/drag reorder và giữ selection theo ID. Chỉ dùng global timing từ API report. Xem [Studio README](../apps/studio-web/README.md) để chạy và biết giới hạn. Bộ UI-kit/studio mock còn ở workspace riêng, chưa được gộp vào ứng dụng này. Chưa có persistent undo/player/multi-track.
 
 Ghi branch, file đã đổi, contract sử dụng, cách chạy, bằng chứng kiểm tra, giới hạn và câu hỏi cần phối hợp. Không đánh dấu một capability đã xong nếu mới chỉ có manifest, fixture hoặc mock.
